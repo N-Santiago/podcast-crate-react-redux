@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2021_05_12_153540) do
     t.string "audio"
     t.string "image"
     t.string "title"
-    t.integer "podcast_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
