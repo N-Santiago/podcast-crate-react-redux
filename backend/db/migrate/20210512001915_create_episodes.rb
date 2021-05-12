@@ -4,7 +4,6 @@ class CreateEpisodes < ActiveRecord::Migration[6.0]
       t.string :audio
       t.string :image
       t.string :title
-      t.integer :podcast_id 
 
       t.timestamps
     end
