@@ -90,7 +90,7 @@ GEM
     msgpack (1.4.2)
     multi_xml (0.6.0)
     nio4r (2.5.7)
-    nokogiri (1.11.3)
+    nokogiri (1.11.4)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     pg (1.2.3)
@@ -100,6 +100,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.3.7)
@@ -163,6 +165,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   podcast_api
   puma (~> 4.1)
+  rack-cors
   rails (~> 6.0.3, >= 6.0.3.7)
   spring
   spring-watcher-listen (~> 2.0.0)

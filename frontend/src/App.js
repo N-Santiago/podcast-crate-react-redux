@@ -9,8 +9,8 @@ function App() {
   return <div>
     <Switch>
       <Route exact path='/' component={Home} />
-      <Route exact path='/podcast' component={PodcastList} />
-      <Route path='/podcast/new' component={PodcastForm} />
+      <Route exact path='/podcasts' component={PodcastList} />
+      <Route path='/podcasts/new' component={PodcastForm} />
     </Switch>  
   </div>;
 
