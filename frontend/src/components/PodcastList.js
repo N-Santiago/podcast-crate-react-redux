@@ -1,6 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { getPodcast } from "../redux/actions/podcastActions";
+import { connect } from 'react-redux';
 
-export default class PodcastList extends Component {
+class PodcastList extends Component {
+    componentDidMount() {
+        this.props.getPodcast();
+    }
+    
     render() {
         return (
             <div>
@@ -9,3 +15,11 @@ export default class PodcastList extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        podcast: state.podcast,
+    }
+}
+
+export default connect(mapStateToProps, { getPodcast })(PodcastList);
