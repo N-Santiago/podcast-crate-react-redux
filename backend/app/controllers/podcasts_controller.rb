@@ -8,6 +8,11 @@ class PodcastsController < ApplicationController
         podcast = Podcast.new(podcast_params)
         if podcast.save
             render json: podcast.to_json( :include => [:episodes])
+        else
+            render json: {
+                error: "Cannot create podcast",
+                status: 500
+            }, status: 500   
         end 
     end 
 

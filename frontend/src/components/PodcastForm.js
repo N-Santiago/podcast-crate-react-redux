@@ -16,7 +16,8 @@ class PodcastForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.createPodcast(this.state)
+        this.props.createPodcast(this.state, this.props.history);
+        // this.props.history.push("/podcasts");
     }
 
     render() {

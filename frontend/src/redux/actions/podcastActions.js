@@ -8,7 +8,7 @@ export const getPodcast = () => {
     }
 } 
 
-export const createPodcast = newPodcastData => {
+export const createPodcast = (newPodcastData, history) => {
     return (dispatch) => {
         fetch("http://localhost:3000/podcasts", {
             method: "POST",
@@ -18,7 +18,17 @@ export const createPodcast = newPodcastData => {
             },
             body: JSON.stringify({ podcast: newPodcastData }) 
         })
-        .then(res => res.json())
-        .then(data => dispatch({type: 'CREATE_PODCAST_SUCCESS', payload: data}))
-    }
-}
+        .then(res => {
+            if (res.ok) {
+              return res.json();
+            } else {
+              throw new Error(res.statusText);
+            }
+        })
+        .then(data => {
+            dispatch({ type: "CREATE_PODCAST_SUCCESS", payload: data });
+            history.push("/podcasts");
+        })
+        .catch((err) => dispatch({ type: "ERROR", payload: "" }));
+    };
+};
