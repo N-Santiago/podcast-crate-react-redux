@@ -1,5 +1,5 @@
 class Podcast < ApplicationRecord
     has_many :episodes
 
-    validates :title, presence: true
+    validates :title, :website presence: true
 end
