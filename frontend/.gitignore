@@ -3,6 +3,8 @@
 #api_keys
 .env
 
+src/components/PodcastApi.js 
+
 # dependencies
 /node_modules
 /.pnp
