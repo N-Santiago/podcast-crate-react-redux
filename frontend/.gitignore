@@ -3,7 +3,7 @@
 #api_keys
 .env
 
-src/components/PodcastApi.js 
+src/redux/reducers/podcastReducer.js 
 
 # dependencies
 /node_modules
