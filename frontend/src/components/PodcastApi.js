@@ -8,7 +8,7 @@ export default class PodcastApi extends Component {
   };
 
   // componentDidMount() {
-  //   const client = Client({ apiKey: '521822f39f8d4140bd5ab8dcdae30b7f' });
+  //   const client = Client({ apiKey: 'API_KEY' });
   //   // debugger
   //   client.search({
   //   q: 'Star Wars',
