@@ -14,9 +14,8 @@ class PodcastSearch extends Component {
     }
 
     handleOnSubmit = event => {
-        event.preventDefault()
-        debugger
-        searchPodcastQuery(this.state.q)
+        event.preventDefault()  
+        this.props.searchPodcastQuery()
     }
 
     render() {

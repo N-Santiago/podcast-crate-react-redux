@@ -37,7 +37,6 @@ export default class PodcastApi extends Component {
         <PodcastSearch />
         <br /><br />
         {this.state.podcast.map(p => { 
-          return (
             <div>
               <img src={p.podcast.image} />  
               <p><strong>{p.podcast.title_original} - {p.title_original}/</strong>
@@ -48,7 +47,6 @@ export default class PodcastApi extends Component {
               <source src={p.audio} type="audio/mpeg" />
               </audio></p>
             </div>
-          )
         })}
       </div>
     );
