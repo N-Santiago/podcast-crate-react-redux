@@ -29,8 +29,6 @@ class PodcastForm extends Component {
                     <input type='text' name='title' onChange={this.handleChange} value={this.state.title} />
                     Image:
                     <input type='image_url' name='image' onChange={this.handleChange} value={this.state.image} />
-                    Country:
-                    <input type='text' name='country' onChange={this.handleChange} value={this.state.country} />
                     Website:
                     <input type='text' name='website' onChange={this.handleChange} value={this.state.website} />
                     <button type='submit'>Submit</button>
