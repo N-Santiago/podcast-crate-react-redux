@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { searchPodcastQuery } from '../redux/actions/podcastActions'
+import PodcastApi from './PodcastApi'
 
 
 class PodcastSearch extends Component {
@@ -15,7 +16,7 @@ class PodcastSearch extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault()  
-        this.props.searchPodcastQuery()
+        this.props.searchPodcastQuery(this.state.q)
     }
 
     render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getPodcast } from "../redux/actions/podcastActions";
 import { connect } from 'react-redux';
-import PodcastListItem from './PodcastListITem'
+import PodcastContainer from './PodcastContainer'
 
 class PodcastList extends Component {
     componentDidMount() {
@@ -13,7 +13,7 @@ class PodcastList extends Component {
             <div>
                 <h1>Podcasts</h1>
                 {this.props.podcast.map((p) => (
-                    <PodcastListItem podcast={p} />
+                    <PodcastContainer podcast={p} />
                 ))}
             </div>
         );

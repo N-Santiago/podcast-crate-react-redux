@@ -16,8 +16,7 @@ ActiveRecord::Schema.define(version: 2021_05_12_001915) do
   enable_extension "plpgsql"
 
   create_table "episodes", force: :cascade do |t|
-    t.string "audio"
-    t.string "image"
+    t.string "spotify_link"
     t.string "title"
     t.integer "podcast_id"
     t.datetime "created_at", precision: 6, null: false
@@ -27,7 +26,6 @@ ActiveRecord::Schema.define(version: 2021_05_12_001915) do
   create_table "podcasts", force: :cascade do |t|
     t.string "image"
     t.string "title"
-    t.string "country"
     t.string "website"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
