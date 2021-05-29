@@ -3,8 +3,6 @@
 #api_keys
 .env
 
-src/redux/reducers/podcastReducer.js 
-
 # dependencies
 /node_modules
 /.pnp
