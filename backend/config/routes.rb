@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :podcasts, only: [:index, :create]
-  resources :episodes, only: [:index, :create]
+  resources :podcasts do
+    resources :episodes
+  end 
+  # resources :episodes
 end

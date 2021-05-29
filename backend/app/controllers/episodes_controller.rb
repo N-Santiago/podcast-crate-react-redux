@@ -1,7 +1,7 @@
-class EpisodeController < ApplicationController
+class EpisodesController < ApplicationController
     def index 
         episodes = Episode.all
-        render json: episodess.to_json
+        render json: episodes.to_json
     end 
 
     def create
@@ -14,6 +14,16 @@ class EpisodeController < ApplicationController
                 status: 500
             }, status: 500   
         end 
+    end 
+
+    def show
+        episode = Episode.find(params[:id])
+        render json: episode.to_json
+    end 
+
+    def destroy
+        episode = Episode.find(params[:id])
+        episode.destroy
     end 
 
 

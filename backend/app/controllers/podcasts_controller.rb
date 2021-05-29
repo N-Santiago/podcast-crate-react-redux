@@ -16,6 +16,15 @@ class PodcastsController < ApplicationController
         end 
     end 
 
+    def show
+        podcast = Podcast.find(params[:id])
+        render json: podcast.to_json( :include => [:episodes] )
+    end 
+
+    def destroy
+        podcast = Podcast.find(params[:id])
+        podcast.destroy
+    end 
 
     private
     def podcast_params
