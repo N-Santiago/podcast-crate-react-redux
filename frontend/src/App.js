@@ -1,23 +1,30 @@
 import React from 'react';
+// import { fetchPodcasts } from './actions/fetchPodcasts'
+import PodcastsContainer from './containers/PodcastsContainer'
 
 
 class App extends React.Component {
-  componentDidMount() {
-    fetch('http://localhost:3000/podcasts', {
-      method: 'GET'
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
-  }
 
+  
   render() {
     return (
       <div className="App">
-      App
+        < PodcastsContainer />
       </div>
     )
   }
 }
 
+// const mapStateToProps = (state) => {
+//   return {
+//     podcasts: state.podcasts
+//   }
+// }
+
 export default App;
+
+// Routes
+// podcasts
+// podcasts/:id - show episodes 
+//podcasts/new - form 
 
