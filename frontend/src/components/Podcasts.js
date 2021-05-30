@@ -1,12 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 const Podcasts = (props) => {
     return (
         <div>
-            {console.log(props)}
+            <h2>{props.podcast.title}</h2>
+            <p>{props.podcast.website}</p>
         </div>
+    );
+};
 
-    )
-}
+export default Podcasts;
 
-export default Podcasts
