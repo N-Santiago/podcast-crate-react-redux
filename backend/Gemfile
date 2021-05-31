@@ -44,3 +44,5 @@ gem 'httparty'
 gem 'podcast_api'
 
 gem 'active_model_serializers'
+
+gem 'pry'
