@@ -22,7 +22,7 @@ class PodcastInput extends React.Component {
         return (
             <div>
                 <h1>Enter a Podcast</h1>
-                <form onSubmit={this.props.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <label>Title:</label>
                     <input type='text' placeholder='Title' value={this.state.title} name='title' onChange={this.handleChange} /><br /><br />
                     <label>Image:</label>
