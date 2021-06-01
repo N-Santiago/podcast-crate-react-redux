@@ -1,7 +1,8 @@
 import React from 'react';
 // import { fetchPodcasts } from './actions/fetchPodcasts'
+import { Route } from 'react-router-dom'
+// import PodcastsContainer from './containers/PodcastsContainer'
 import PodcastsContainer from './containers/PodcastsContainer'
-
 
 class App extends React.Component {
 
@@ -15,12 +16,6 @@ class App extends React.Component {
     )
   }
 }
-
-// const mapStateToProps = (state) => {
-//   return {
-//     podcasts: state.podcasts
-//   }
-// }
 
 export default App;
 
