@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Podcast = (props) => {
+    
     return (
         <div>
             <h2>{props.podcast.title}</h2>

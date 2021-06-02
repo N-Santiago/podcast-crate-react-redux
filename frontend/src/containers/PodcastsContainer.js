@@ -1,8 +1,8 @@
+
 import React from 'react';
-import { connect } from 'react-redux';
 import { Route } from 'react-router-dom'
-import { fetchPodcasts } from '../actions/fetchPodcasts';
 import Podcasts from '../components/Podcasts';
+import Podcast from '../components/Podcast';
 import PodcastInput from '../components/PodcastInput';
 
 class PodcastsContainer extends React.Component {
@@ -12,6 +12,7 @@ class PodcastsContainer extends React.Component {
             <div>
                 <Route path='/podcasts/new' component={PodcastInput}/>
                 <Route exact path='/podcasts' component={Podcasts}/>
+                {/* <Route path='podcasts/:id' component={Podcast}/> */}
             </div>
         );
     }
