@@ -2,8 +2,6 @@ import React from 'react'
 
 const Podcast = (props) => {
 
-    console.log(props)
-
     let podcast = props.podcasts[props.match.params.id - 1]
     
     return (
