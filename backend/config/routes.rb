@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :podcasts do
     resources :episodes
   end 
-  # resources :episodes
+  resources :episodes
 end
