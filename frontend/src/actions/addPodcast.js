@@ -1,6 +1,3 @@
-
-
-
 export const addPodcast = (newPodcastData, history) => {
     return (dispatch) => {
         fetch('http://localhost:3000/podcasts', {
