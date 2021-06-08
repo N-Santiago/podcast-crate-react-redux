@@ -1,4 +1,5 @@
 class EpisodesController < ApplicationController
+    
     def index 
         episodes = Episode.all
         render json: episodes.to_json
@@ -11,8 +12,8 @@ class EpisodesController < ApplicationController
         else
             render json: {
                 error: "Cannot create episode",
-                status: 500
-            }, status: 500   
+                status: episode.errors.full_messages
+            }, status: episode.errors.full_messages  
         end 
     end 
 
