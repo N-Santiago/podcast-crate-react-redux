@@ -6,7 +6,8 @@ class EpisodeInput extends React.Component {
 
     state = {
         title: '',
-        spotify_link: ''
+        spotify_link: '',
+        podcast_id: this.props.podcast.id
     }
 
     handleChange = (e) => {

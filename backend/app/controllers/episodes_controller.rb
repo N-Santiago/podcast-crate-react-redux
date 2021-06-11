@@ -2,24 +2,25 @@ class EpisodesController < ApplicationController
     
     def index 
         episodes = Episode.all
-        render json: episodes.to_json
+        render json: episodes
     end 
 
     def create
+        # byebug
         episode = Episode.new(episode_params)
         if episode.save
-            render json: episode.to_json
+            render json: episode
         else
             render json: {
                 error: "Cannot create episode",
                 status: episode.errors.full_messages
             }, status: episode.errors.full_messages  
         end 
-    end 
+    end  
 
     def show
         episode = Episode.find(params[:id])
-        render json: episode.to_json
+        render json: episode
     end 
 
     def destroy
@@ -29,7 +30,7 @@ class EpisodesController < ApplicationController
 
 
     private
-    def episode_params
-        params.require(:episode).permit(:title, :spotify_link, :podcast_id)
-    end 
+        def episode_params
+            params.require(:episode).permit(:title, :spotify_link, :podcast_id)
+        end 
 end

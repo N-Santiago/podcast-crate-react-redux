@@ -1,4 +1,4 @@
-export const addEpisode = (newEpisodeData, podcastId) => {
+export const addEpisode = (episode, podcastId, history) => {
     return (dispatch) => {
         fetch(`http://localhost:3000/podcasts/${podcastId}/episodes`, {
             method: 'POST',
@@ -6,17 +6,13 @@ export const addEpisode = (newEpisodeData, podcastId) => {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({episode: newEpisodeData})
+            body: JSON.stringify({episode})
         })
-        .then((res) => {
-            if (res.ok) {
-              return res.json();
-            } else {
-              throw new Error(res.statusText);
-            }
+        .then(res => res.json())
+        .then((podcast) => {
+            dispatch({ type: "CREATE_EPISODE", payload: podcast })
+            history.push(`/podcasts/${podcastId}/episodes`)
         })
-        .then((podcast) => { dispatch({ type: "CREATE_EPISODE", payload: podcast });
-        })
-        .catch((err) => dispatch({ type: "ERROR", payload: "" }));
+        .catch((err) => dispatch({ type: "ERROR", payload: "" }))
     }
 }

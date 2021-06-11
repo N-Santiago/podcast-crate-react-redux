@@ -18,9 +18,10 @@ ActiveRecord::Schema.define(version: 2021_05_12_001915) do
   create_table "episodes", force: :cascade do |t|
     t.string "spotify_link"
     t.string "title"
-    t.integer "podcast_id"
+    t.bigint "podcast_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["podcast_id"], name: "index_episodes_on_podcast_id"
   end
 
   create_table "podcasts", force: :cascade do |t|
