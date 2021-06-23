@@ -1,4 +1,6 @@
-export const addPodcast = (newPodcastData, history) => {
+
+
+export const addPodcast = (podcast, history) => {
     return (dispatch) => {
         fetch('http://localhost:3000/podcasts', {
             method: 'POST',
@@ -6,7 +8,7 @@ export const addPodcast = (newPodcastData, history) => {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({podcast: newPodcastData})
+            body: JSON.stringify({podcast})
         })
         .then((res) => {
             if (res.ok) {

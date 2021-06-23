@@ -9,7 +9,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 ReactDOM.render(
   <Provider store={ store }>
-    <Router>
+    <Router >
       <App />
     </Router>
   </Provider>  

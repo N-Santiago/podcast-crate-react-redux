@@ -16,7 +16,7 @@ class PodcastsContainer extends React.Component {
             <div>
                 <Switch>
                     <Route path='/podcasts/new' component={PodcastInput}/>
-                    <Route exact path='/podcasts' component={Podcasts}/>
+                    <Route exact path='/podcasts' render={(routerProps) => <Podcasts {...routerProps} podcasts={this.props.podcasts}/>}/>
                     <Route path='/podcasts/:id' render={(routerProps) => <Podcast {...routerProps} podcasts={this.props.podcasts}/>}/>
                 </Switch> 
             </div>
