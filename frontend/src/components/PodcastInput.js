@@ -31,7 +31,7 @@ class PodcastInput extends React.Component {
                     <label>Title:</label>
                     <input type='text' placeholder='Title' value={this.state.title} name='title' onChange={this.handleChange} /><br /><br />
                     <label>Image:</label>
-                    <input type='text' placeholder='Image' value={this.state.image} name='image' onChange={this.handleChange} /><br /><br />
+                    <input type='file' placeholder='Image' value={this.state.image} name='image' accept='image/*' onChange={this.handleChange} /><br /><br />
                     <label>Website:</label>
                     <input type='text' placeholder='Website' value={this.state.website} name='website' onChange={this.handleChange} /><br /><br />
                     <input type="submit" value="Submit" /> 
