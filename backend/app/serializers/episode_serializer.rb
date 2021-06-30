@@ -1,4 +1,4 @@
 class EpisodeSerializer < ActiveModel::Serializer
-  attributes :id, :title, :spotify_link, :podcast_id
+  attributes :id, :name, :spotify_link, :podcast_id
 
 end

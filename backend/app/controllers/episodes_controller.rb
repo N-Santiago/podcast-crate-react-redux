@@ -31,6 +31,6 @@ class EpisodesController < ApplicationController
 
     private
         def episode_params
-            params.require(:episode).permit(:title, :spotify_link, :podcast_id)
+            params.require(:episode).permit(:name, :spotify_link, :podcast_id)
         end 
 end

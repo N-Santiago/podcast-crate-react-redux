@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_06_24_004947) do
 
   create_table "episodes", force: :cascade do |t|
     t.string "spotify_link"
-    t.string "title"
+    t.string "name"
     t.bigint "podcast_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2021_06_24_004947) do
   end
 
   create_table "podcasts", force: :cascade do |t|
-    t.string "image"
     t.string "title"
     t.string "website"
     t.datetime "created_at", precision: 6, null: false

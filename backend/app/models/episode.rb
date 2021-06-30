@@ -1,4 +1,4 @@
 class Episode < ApplicationRecord
     belongs_to :podcast
-    validates :title,  presence: true 
+    validates :name,  presence: true 
 end
