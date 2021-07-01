@@ -3,7 +3,7 @@ import EpisodesContainer from '../containers/EpisodesContainer'
 
 const Podcast = (props) => {
 
-    let podcast = props.podcasts.filter(podcast => podcast.id === props.match.params.id)[0]
+    let podcast = props.podcasts.filter(podcast => podcast.id == props.match.params.id)[0]
     
     return (
         <div>

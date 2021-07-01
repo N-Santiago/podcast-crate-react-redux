@@ -27,7 +27,7 @@ export const addPodcast = (podcast, history) => {
 };
 
 function getImageFromBackEnd(url, div){
-  fetch(`http://localhost:3000${url}`)
+  fetch(`http://localhost:3000/${url}`)
   .then(resp => resp.blob())
   .then(blob => {
       const img  = document.createElement("img")
