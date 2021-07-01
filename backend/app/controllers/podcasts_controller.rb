@@ -29,6 +29,6 @@ class PodcastsController < ApplicationController
 
     private
     def podcast_params
-        params.require(:podcast).permit(:title, :image, :website)
+        params.permit(:title, :image, :website)
     end 
 end

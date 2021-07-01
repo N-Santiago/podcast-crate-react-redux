@@ -15,7 +15,8 @@ class PodcastInput extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addPodcast(this.state, this.props.history);
+        const formData = new FormData(e.target) 
+        this.props.addPodcast(formData, this.props.history);
         this.setState({
             title: '',
             image: '',
