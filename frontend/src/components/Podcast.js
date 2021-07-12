@@ -8,7 +8,7 @@ const Podcast = (props) => {
     return (
         <div>
             <h2>{podcast ? podcast.title : "Podcast Not Available"}</h2>  
-            {podcast ? <p><img src={podcast ? podcast.image : null} width={300} height={300} alt={'Podcast Crate'} /></p> : null}
+            {podcast ? <p><img id={`podcast-${podcast.id}`} src={podcast ? podcast.image : null} width={300} height={300} alt={'Podcast Crate'} /></p> : null}
             {podcast ? podcast.website : null}
             <EpisodesContainer podcast={podcast} />
         </div>

@@ -18,7 +18,8 @@ export const addPodcast = (podcast, history) => {
             }
           })
           .then((data) => {
-            getImageFromBackEnd()
+            debugger 
+            // getImageFromBackEnd(url, div)
             dispatch({ type: "CREATE_PODCAST", payload: data });
             history.push("/podcasts");
           })
@@ -30,9 +31,9 @@ function getImageFromBackEnd(url, div){
   fetch(`http://localhost:3000/${url}`)
   .then(resp => resp.blob())
   .then(blob => {
-      const img  = document.createElement("img")
-      img.src = URL.createObjectURL(blob)
-      div.insertAdjacentElement('afterbegin', img) //insert the img as the first child inside the post body - check out insertAdjacentElement here https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
+      // const img  = document.createElement("img")
+      div.src = URL.createObjectURL(blob)
+      // div.insertAdjacentElement('afterbegin', img) //insert the img as the first child inside the post body - check out insertAdjacentElement here https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
   })
 }
     

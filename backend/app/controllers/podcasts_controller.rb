@@ -2,13 +2,14 @@ class PodcastsController < ApplicationController
     
     def index 
         podcasts = Podcast.all.with_attached_image
-        render json: podcasts.to_json( :include => [:episodes] )
+        # render json: podcasts.to_json( :include => [:episodes] )
+        render json: podcasts
     end 
 
     def create
         podcast = Podcast.new(podcast_params)
         if podcast.save
-            render json: podcast.to_json( :include => [:episodes])
+            render json: podcast
         else
             render json: {
                 error: "Cannot create podcast",
@@ -19,7 +20,7 @@ class PodcastsController < ApplicationController
 
     def show
         podcast = Podcast.find(params[:id])
-        render json: podcast.to_json( :include => [:episodes] )
+        render json: podcast
     end 
 
     def destroy

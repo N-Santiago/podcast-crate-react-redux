@@ -1,18 +1,16 @@
 class PodcastSerializer < ActiveModel::Serializer
-  include Rails.application.routes.url_helpers
-  attributes :id, :title, :image, :website
+  # include Rails.application.routes.url_helpers
+  attributes :id, :title, :image_format, :website
   has_many :episodes 
 
-  def image
+  def image_format
     return unless object.image.attached?
 
     object.image.blob.attributes
           .slice('filename', 'byte_size')
-          .merge(url: image_url)
+          .merge(url: object.image_url)
           .tap { |attrs| attrs['name'] = attrs.delete('filename') }
   end
 
-  def image_url
-    url_for(self.image)
-  end
+
 end
