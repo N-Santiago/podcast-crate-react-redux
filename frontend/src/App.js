@@ -1,4 +1,6 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom'
+import Home from './components/Home'
 import PodcastsContainer from './containers/PodcastsContainer'
 
 class App extends React.Component {
@@ -8,6 +10,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Podcast Crate</h1>
+        <Switch>
+            <Route path='/' component={Home}/>
+        </Switch> 
         < PodcastsContainer />
       </div>
     )
@@ -16,8 +21,5 @@ class App extends React.Component {
 
 export default App;
 
-// Routes
-// podcasts
-// podcasts/:id - show episodes 
-//podcasts/new - form 
+
 
