@@ -1,16 +1,17 @@
-import React from 'react'
-import EpisodesContainer from '../containers/EpisodesContainer'
+// import EpisodesContainer from '../containers/EpisodesContainer'
+import { Link } from 'react-router-dom'
 
-const Podcast = (props) => {
+const Podcast = ({id, title, image_format, website}) => {
 
-    let podcast = props.podcasts.filter(podcast => podcast.id == props.match.params.id)[0]
-    
+    debugger 
     return (
         <div>
-            <h2>{podcast ? podcast.title : "Podcast Not Available"}</h2>  
-            {podcast ? <p><img id={`podcast-${podcast.id}`} src={podcast ? podcast.image : null} width={300} height={300} alt={'Podcast Crate'} /></p> : null}
-            {podcast ? podcast.website : null}
-            <EpisodesContainer podcast={podcast} />
+            <div key={id}>
+                    <h2>{title}</h2>
+                    <Link to={`/podcasts/${id}`}><img id={`podcast-${id}`} src={image_format ? image_format.url : process.env.PUBLIC_URL + "logo192.png"} width={300} height={300} alt={"podcast"} /></Link>
+                    <p>{website}</p>
+            </div>
+            {/* <EpisodesContainer podcast={{id, title, image_format, website}} /> */}
         </div>
     );
 };

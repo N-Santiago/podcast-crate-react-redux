@@ -5,16 +5,8 @@ export default function podcasts(state = [], action) {
         case "FETCH_EPISODES":
             return [...state, ...action.payload];
         case "CREATE_PODCAST":
-            return [...state, action.podcast];
+            return [...state, action.payload];
         case "CREATE_EPISODE":
-            // let podcasts = state.podcasts.map(podcast => {
-            //     if (podcast.id === action.payload.id) {
-            //         return action.payload
-            //     } else {
-            //         return podcast
-            //     }
-            // })
-            // return {...state, podcasts: podcasts}
             return [...state, action.episode]
         default:
             return state;

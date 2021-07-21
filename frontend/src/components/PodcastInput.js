@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addPodcast } from '../actions/addPodcast'
+import { addPodcast } from '../actions/index'
 
 class PodcastInput extends React.Component {
     state = {

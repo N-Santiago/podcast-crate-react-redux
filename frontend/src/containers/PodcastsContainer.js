@@ -17,7 +17,11 @@ class PodcastsContainer extends React.Component {
                 <Switch>
                     <Route path='/podcasts/new' component={PodcastInput}/>
                     <Route exact path='/podcasts' render={(routerProps) => <Podcasts {...routerProps} podcasts={this.props.podcasts}/>}/>
-                    <Route path='/podcasts/:id' render={(routerProps) => <Podcast {...routerProps} podcasts={this.props.podcasts}/>}/>
+                    <Route path='/podcasts/:id' render={(routerProps) => {
+                       const podcast = this.props.podcasts.find(podcast => podcast.id === routerProps.match.params.id)  
+                       return <Podcast {...podcast}/>
+                    }} 
+                    />
                 </Switch> 
             </div>
         );
