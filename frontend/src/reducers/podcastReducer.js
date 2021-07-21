@@ -7,7 +7,7 @@ export default function podcasts(state = [], action) {
         case "CREATE_PODCAST":
             return [...state, action.payload];
         case "CREATE_EPISODE":
-            return [...state, action.episode]
+            return [...state, action.payload]
         default:
             return state;
 
