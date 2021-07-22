@@ -2,10 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import store from './store'
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom'  
+import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
+import thunk from 'redux-thunk'
+import podcasts from './reducers/podcastReducer'
+
+const reducer = combineReducers({
+  podcasts,
+  // forms,
+})
+
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+let store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <Provider store={ store }>
