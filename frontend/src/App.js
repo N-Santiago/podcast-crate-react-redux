@@ -37,7 +37,6 @@ class App extends React.Component {
                     />
             <Route component={Error}/>
         </Switch> 
-        {/* < PodcastsContainer /> */}
       </div>
     )
   }

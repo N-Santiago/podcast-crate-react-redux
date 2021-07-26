@@ -1,4 +1,4 @@
-// import EpisodesContainer from '../containers/EpisodesContainer'
+import EpisodesContainer from '../containers/EpisodesContainer'
 import { Link } from 'react-router-dom'
 
 const Podcast = ({id, title, image_format, website}) => {
@@ -11,7 +11,7 @@ const Podcast = ({id, title, image_format, website}) => {
                     <Link to={`/podcasts/${id}`}><img id={`podcast-${id}`} src={image_format ? image_format.url : process.env.PUBLIC_URL + '/public/noimage.jpeg'} width={300} height={300} alt={"podcast"} /></Link>
                     <p>{website}</p>
             </div>
-            {/* <EpisodesContainer podcast={{id, title, image_format, website}} /> */}
+            <EpisodesContainer podcast={{id, title, image_format, website}} />
         </div>
     );
 };
