@@ -14,7 +14,7 @@ class PodcastsController < ApplicationController
             render json: {
                 error: "Cannot create podcast",
                 status: 500
-            }, status: 500   
+            } 
         end 
     end 
 

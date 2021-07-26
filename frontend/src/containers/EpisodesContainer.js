@@ -7,7 +7,7 @@ class EpisodesContainer extends React.Component {
         return (
             <div>
                 < EpisodeInput podcast={this.props.podcast} />
-                < Episodes episodes={this.props.podcast && this.props.podcast.episodes} />
+                < Episodes episode={this.props.podcast && this.props.podcast.episodes} />
             </div>
         )
     }

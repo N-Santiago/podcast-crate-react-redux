@@ -7,15 +7,23 @@ class EpisodesController < ApplicationController
 
     def create
         # byebug
-        episode = Episode.new(episode_params)
-        if episode.save
-            render json: episode
-        else
+        podcast = Podcast.find_by(id: params[:podcast_id])
+        if !!podcast 
+            episode = podcast.episodes.build(episode_params)
+            if episode.save
+                render json: episode
+            else
+                render json: {
+                    error: "Cannot create episode",
+                    status: 500
+                } 
+            end 
+        else 
             render json: {
-                error: "Cannot create episode",
-                status: episode.errors.full_messages
-            }, status: episode.errors.full_messages  
-        end 
+                error: "Podcast is not found",
+                status: 500
+            }  
+        end
     end  
 
     def show

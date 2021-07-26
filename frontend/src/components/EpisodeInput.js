@@ -7,7 +7,6 @@ class EpisodeInput extends React.Component {
     state = {
         name: '',
         spotify_link: '',
-        // podcast_id: this.props.podcast.id
     }
 
     handleChange = (e) => {
@@ -21,7 +20,6 @@ class EpisodeInput extends React.Component {
             name: '',
             spotify_link: ''
         })
-        console.log(this.props.podcast.id) 
     }
 
     render() {
