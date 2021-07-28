@@ -15,7 +15,6 @@ class App extends React.Component {
     this.props.fetchPodcasts();
   }
 
-  
   render() {
     return (
       <div className="App">
