@@ -5,9 +5,10 @@ import Episodes from '../components/Episodes'
 class EpisodesContainer extends React.Component {
     
     render() { 
+        // debugger 
         return (
             <div>
-                < EpisodeInput />
+                < EpisodeInput podcast={this.props.podcast} />
                 < Episodes episodes={this.props.podcast && this.props.podcast.episodes} />
             </div>
         )
