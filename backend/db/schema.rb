@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_06_30_232335) do
 
   create_table "episodes", force: :cascade do |t|
     t.string "spotify_link"
+    t.string "date"
     t.string "name"
     t.bigint "podcast_id"
     t.datetime "created_at", precision: 6, null: false

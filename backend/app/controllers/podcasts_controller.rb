@@ -2,7 +2,6 @@ class PodcastsController < ApplicationController
     
     def index 
         podcasts = Podcast.all.with_attached_image
-        # render json: podcasts.to_json( :include => [:episodes] )
         render json: podcasts
     end 
 

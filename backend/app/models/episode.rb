@@ -1,4 +1,4 @@
 class Episode < ApplicationRecord
     belongs_to :podcast
-    validates :name,  presence: true 
+    validates :name, :date, :spotify_link, presence: true 
 end
