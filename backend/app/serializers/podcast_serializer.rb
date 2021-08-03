@@ -1,6 +1,5 @@
 class PodcastSerializer < ActiveModel::Serializer
-  # include Rails.application.routes.url_helpers
-  attributes :id, :title, :image_format, :website
+  attributes :id, :title, :image_format, :website #:sort_by_episodes
   has_many :episodes 
 
   def image_format
@@ -11,6 +10,5 @@ class PodcastSerializer < ActiveModel::Serializer
           .merge(url: object.image_url)
           .tap { |attrs| attrs['name'] = attrs.delete('filename') }
   end
-
 
 end
