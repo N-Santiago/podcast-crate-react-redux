@@ -1,11 +1,14 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
+import '@fontsource/roboto';
+import Toolbar from '@material-ui/core/Toolbar';
 import Home from './components/Home'
 import About from './components/About'
 import Error from './components/Error';
 import Podcasts from './components/Podcasts';
 import Podcast from './components/Podcast';
 import PodcastInput from './components/PodcastInput';
+import Navbar from './components/Navbar';
 import { connect } from 'react-redux';
 import { fetchPodcasts } from './actions/fetchPodcasts';
 
@@ -18,7 +21,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Podcast Crate</h1>
+        < Navbar />
+        < Toolbar />
+        < Toolbar />
         <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/about' component={About}/>
