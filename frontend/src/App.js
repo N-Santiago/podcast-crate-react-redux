@@ -8,6 +8,7 @@ import Error from './components/Error';
 import Podcasts from './components/Podcasts';
 import Podcast from './components/Podcast';
 import PodcastInput from './components/PodcastInput';
+import PodcastEdit from './components/PodcastInput';
 import Navbar from './components/Navbar';
 import { connect } from 'react-redux';
 import { fetchPodcasts } from './actions/fetchPodcasts';
@@ -19,7 +20,9 @@ class App extends React.Component {
   }
 
   render() {
+    
     return (
+      
       <div className="App">
         < Navbar />
         < Toolbar />
@@ -27,7 +30,7 @@ class App extends React.Component {
         <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/about' component={About}/>
-            <Route exact path='/podcasts/new' component={PodcastInput}/>
+            <Route path='/podcasts/new' component={PodcastInput}/>
             <Route exact path='/podcasts' render={(routerProps) => <Podcasts {...routerProps} podcasts={this.props.podcasts}/>}/>
             <Route exact path='/podcasts/:id' render={(routerProps) => {
                 const podcast = this.props.podcasts.find(podcast => podcast.id === parseInt(routerProps.match.params.id))  
@@ -38,6 +41,15 @@ class App extends React.Component {
                 )   
             }} 
             />
+            <Route path='/podcasts/edit/:id' render={(routerProps) => {
+                const podcast = this.props.podcasts.find(podcast => podcast.id === parseInt(routerProps.match.params.id))  
+                return (!!podcast) ? (
+                <PodcastEdit {...routerProps} {...podcast}/> 
+                ) : (
+                    < Error />
+                )   
+            }}
+            /> 
             <Route component={Error}/>
         </Switch> 
       </div>
