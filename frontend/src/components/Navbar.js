@@ -7,8 +7,6 @@ import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import IconButton from '@material-ui/core/IconButton';
-import MicIcon from '@material-ui/icons/Mic';
 import HomeIcon from '@material-ui/icons/Home';
 
 const useStyles = makeStyles((theme) => ({
@@ -47,21 +45,21 @@ export default function NavBar() {
       }}
       >
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            <h1>Podcast Crate</h1>
+          <Typography variant="h3" className={classes.title}>
+            Podcast Crate
           </Typography>
           <Button color="inherit" component={Link} href={"/"}><HomeIcon/></Button>
           <Button color="inherit" component={Link} href={"/about"}><strong>About</strong></Button>
           <div>
-              <IconButton
+              <Button
                 roboto-label="podcasts"
                 roboto-controls="menu-appbar"
                 roboto-haspopup="true"
                 onClick={handleMenu}
                 color="inherit"
               >
-                <MicIcon /><Button color="inherit"><strong>Podcast</strong></Button>
-              </IconButton>
+                <strong>Podcasts</strong>
+              </Button> 
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
@@ -77,8 +75,8 @@ export default function NavBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem component={Link} href={"/podcasts"} onClick={handleClose}>Podcasts</MenuItem>
-                <MenuItem component={Link} href={"/podcasts/new"} onClick={handleClose}>New</MenuItem>
+                <MenuItem color="inherit" component={Link} href={"/podcasts"} onClick={handleClose}>Podcasts</MenuItem>
+                <MenuItem color="inherit" component={Link} href={"/podcasts/new"} onClick={handleClose}>New</MenuItem>
               </Menu>
             </div>
         </Toolbar>

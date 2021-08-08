@@ -1,3 +1,8 @@
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Link from '@material-ui/core/Link';
+import ListItemText from '@material-ui/core/ListItemText';
+
 const About = () => {
   return (
     <div>
@@ -30,12 +35,20 @@ const About = () => {
           
           I'm a blogger and podcaster myself and you can visit a few of my personal 
           projects in the links below:</p>}
-      {<lu>
-          <li><a href='https://twitter.com/Norbert_82' target="_blank" rel="noopener noreferrer">My personal Twitter account.</a></li><br />
-          <li><a href='https://www.instagram.com/thesmallreviews' target="_blank" rel="noopener noreferrer">Small Reviews: Where I write about movies on Instagram.</a></li><br />
-          <li><a href='https://www.instagram.com/lechecocoproductions' target="_blank" rel="noopener noreferrer">Lechecoco Productions: We talk about beers, movies and other topics (in Spanish).</a></li><br />
-          <li><a href='https://www.instagram.com/yoodioluchalibre/' target="_blank" rel="noopener noreferrer">Yo Odio Lucha Libre: Yes, I'm a Pro Wrestling fan and here we geek out about it (also in Spanish).</a></li><br />
-        </lu>}    
+      {<List component="nav" aria-label="My Links" >
+          <ListItem button color="inherit" component={Link} href='https://twitter.com/Norbert_82' target="_blank" rel="noopener noreferrer">
+              <ListItemText primary="My personal Twitter account." />
+          </ListItem>
+          <ListItem button color="inherit" component={Link} href='https://www.instagram.com/thesmallreviews' target="_blank" rel="noopener noreferrer">
+            <ListItemText primary="Small Reviews: Where I write about movies on Instagram." />
+          </ListItem>
+          <ListItem button color="inherit" component={Link} href='https://www.instagram.com/lechecocoproductions' target="_blank" rel="noopener noreferrer">
+            <ListItemText primary="Lechecoco Productions: We talk about beers, movies and other topics (in Spanish)." />
+          </ListItem>
+          <ListItem button color="inherit" component={Link} href='https://www.instagram.com/yoodioluchalibre/' target="_blank" rel="noopener noreferrer">
+            <ListItemText primary="Yo Odio Lucha Libre: Yes, I'm a Pro Wrestling fan and here we geek out about it (also in Spanish)." />
+          </ListItem>
+        </List>}    
     </div>
   );
 };
