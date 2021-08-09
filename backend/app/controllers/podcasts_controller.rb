@@ -19,14 +19,14 @@ class PodcastsController < ApplicationController
     end 
 
     def show
-        render json: podcast
+        render json: @podcast
     end 
 
     def update
-        if podcast.update(podcast_params)
-            render json: podcast
+        if @podcast.update(podcast_params)
+            render json: @podcast
         else
-            ender json: {
+            render json: {
                 error: "Cannot edit podcast",
                 status: 500
             } 
@@ -34,13 +34,13 @@ class PodcastsController < ApplicationController
     end 
 
     def destroy
-        podcast.destroy
+        @podcast.destroy
     end 
 
     private
 
     def set_podcast
-        podcast = Podcast.find(params[:id])
+        @podcast = Podcast.find(params[:id])
     end 
 
     def podcast_params

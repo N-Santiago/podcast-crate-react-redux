@@ -4,9 +4,9 @@ import { editPodcast } from '../actions/index'
 
 class PodcastEdit extends React.Component {
     state = {
-        title: '',
+        title: this.props.title,
         image: '',
-        website: ''
+        website: this.props.website
     }
 
     handleChange = (e) => {
@@ -14,10 +14,9 @@ class PodcastEdit extends React.Component {
     }
 
     handleSubmit = (e) => {
-        debugger 
         e.preventDefault();
-        // const formData = new FormData(e.target) 
-        this.props.editPodcast(this.props.history);
+        const formData = new FormData(e.target) 
+        this.props.editPodcast(formData, this.props.id, this.props.history);
         this.setState({
             title: '',
             image: '',
@@ -28,7 +27,7 @@ class PodcastEdit extends React.Component {
     render() {
         return (
             <div>
-                <h1>Enter a Podcast</h1>
+                <h1>Edit Podcast</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Title:</label>
                     <input type='text' placeholder='Title' value={this.state.title} name='title' onChange={this.handleChange} /><br /><br />

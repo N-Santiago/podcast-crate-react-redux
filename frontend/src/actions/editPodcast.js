@@ -1,6 +1,7 @@
 
 
 export const editPodcast = (podcast, podcastId, history) => {
+  debugger 
     return (dispatch) => {
         fetch(`http://localhost:3000/podcasts/${podcastId}`, {
             method: 'PATCH',
@@ -16,6 +17,7 @@ export const editPodcast = (podcast, podcastId, history) => {
             }
           })
           .then((data) => {
+            debugger 
             dispatch({ type: "UPDATE_PODCAST", payload: data });
             history.push(`/podcasts/${podcastId}`);
           })

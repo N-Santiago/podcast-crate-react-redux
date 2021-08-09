@@ -8,7 +8,7 @@ export default function podcasts(state = [], action) {
             const index = state.findIndex(podcast => action.payload.podcast_id === podcast.id)
             return [
                 ...state.slice(0, index),
-                [...state, action.payload],
+                action.payload,
                 ...state.slice(index + 1)
             ]    
         case "CREATE_EPISODE":
