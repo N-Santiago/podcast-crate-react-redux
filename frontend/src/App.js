@@ -35,7 +35,7 @@ class App extends React.Component {
                 return (!!podcast) ? (
                 <PodcastEdit {...routerProps} {...podcast}/> 
                 ) : (
-                    < Error />
+                  < Error />
                 )   
             }}
             /> 
@@ -44,7 +44,7 @@ class App extends React.Component {
                 return (!!podcast) ? (
                 <Podcast {...routerProps} {...podcast}/> 
                 ) : (
-                    < Error />
+                  < Error />
                 )   
             }} 
             />

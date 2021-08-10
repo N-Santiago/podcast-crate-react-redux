@@ -1,6 +1,7 @@
 import React from 'react'
 import EpisodeInput from '../components/EpisodeInput'
 import Episodes from '../components/Episodes'
+import '@fontsource/roboto';
 
 class EpisodesContainer extends React.Component {
     

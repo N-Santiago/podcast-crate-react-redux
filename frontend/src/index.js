@@ -11,7 +11,6 @@ import podcasts from './reducers/podcastReducer'
 
 const reducer = combineReducers({
   podcasts,
-  // forms,
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

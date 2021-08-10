@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addEpisode } from '../actions/addEpisode';
+import Button from '@material-ui/core/Button';
+import Link from '@material-ui/core/Link';
 
 class EpisodeInput extends React.Component {
 
@@ -27,6 +29,7 @@ class EpisodeInput extends React.Component {
     render() {
         return (
             <div>
+                <Button color="inherit" component={Link} href={`/podcasts/${this.props.podcast.id}/edit`}><h2>Edit Podcast</h2></Button> 
                 <h2>Enter an Episode</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label>Episode Name:</label>
