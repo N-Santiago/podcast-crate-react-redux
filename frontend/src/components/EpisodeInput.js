@@ -18,7 +18,7 @@ class EpisodeInput extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addEpisode(this.state, this.props.podcast.id)
+        this.props.addEpisode(this.state, this.props.podcast.id, this.props.history)
         this.setState({
             name: '',
             date: '',
@@ -29,7 +29,9 @@ class EpisodeInput extends React.Component {
     render() {
         return (
             <div>
-                <Button color="inherit" component={Link} href={`/podcasts/${this.props.podcast.id}/edit`}><h2>Edit Podcast</h2></Button> 
+                <div>
+                    <Button color="inherit" component={Link} href={`/podcasts/${this.props.podcast.id}/edit`}><h2>Edit Podcast</h2></Button>
+                </div>
                 <h2>Enter an Episode</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label>Episode Name:</label>
