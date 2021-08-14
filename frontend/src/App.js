@@ -28,7 +28,7 @@ class App extends React.Component {
         <Switch>
             <Route exact path='/' component={Home}/>
             <Route exact path='/about' component={About}/>
-            
+            <Route exact path='/podcasts/new' component={PodcastInput}/>
             <Route exact path='/podcasts' render={(routerProps) => <Podcasts {...routerProps} podcasts={this.props.podcasts}/>}/>
             <Route exact path='/podcasts/:id/edit' render={(routerProps) => {
                 const podcast = this.props.podcasts.find(podcast => podcast.id === parseInt(routerProps.match.params.id))  
@@ -48,7 +48,7 @@ class App extends React.Component {
                 )   
             }} 
             />
-            {/* <Route exact path='/podcasts/new' component={PodcastInput}/> */}
+            
             <Route component={Error}/>
         </Switch>
         <Toolbar />
