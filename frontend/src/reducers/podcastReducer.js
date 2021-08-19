@@ -3,6 +3,7 @@ export default function podcasts(state = [], action) {
         case 'FETCH_PODCASTS':
             return [...action.payload];
         case "CREATE_PODCAST":
+            console.log("g")
             return [...state, action.payload];
         case "UPDATE_PODCAST":
             const index = state.findIndex(podcast => action.payload.podcast_id === podcast.id)

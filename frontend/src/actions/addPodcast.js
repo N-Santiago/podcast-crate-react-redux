@@ -2,6 +2,7 @@
 
 export const addPodcast = (podcast, history) => {
     return (dispatch) => {
+      console.log("c")
         fetch('http://localhost:3000/podcasts', {
             method: 'POST',
             headers: {
@@ -16,10 +17,13 @@ export const addPodcast = (podcast, history) => {
             }
           })
           .then((data) => {
+            console.log("d")
             dispatch({ type: "CREATE_PODCAST", payload: data });
+            console.log("e")
             history.push("/podcasts");
           })
           .catch((err) => dispatch({ type: "ERROR", payload: "" }));
+          console.log("f")
       };
 };
     
