@@ -1,6 +1,6 @@
 class PodcastsController < ApplicationController
     before_action :set_podcast, only: [:show, :update, :destroy]
-    before_action :authenticate_user!
+    # before_action :authenticate_user!
     
     def index 
         podcasts = Podcast.all.with_attached_image
