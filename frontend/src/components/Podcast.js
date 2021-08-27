@@ -11,8 +11,6 @@ const Podcast = ({id, title, image_format, website, history, episodes}) => {
 
     const [countDown, setCountDown] = useState(0)
 
-     
-
     return (
         <div>
             <div key={id}>
