@@ -1,5 +1,6 @@
 class Podcast < ApplicationRecord
     include Rails.application.routes.url_helpers
+    belongs_to :user
     has_many :episodes
     has_one_attached :image
     validates :title, :website, presence: true

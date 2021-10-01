@@ -1,5 +1,6 @@
 class PodcastsController < ApplicationController
     before_action :set_podcast, only: [:show, :update, :destroy]
+    before_action :unauthorized_check, only: [:update, :destroy]
     # before_action :authenticate_user!
     
     def index 
@@ -45,6 +46,13 @@ class PodcastsController < ApplicationController
     end 
 
     def podcast_params
-        params.permit(:title, :image, :website)
+        params.permit(:title, :image, :website, :user_id)
     end 
+
+    def unauthorized_check
+        if !@podcast || @podcast.user != current_user
+          render json: "You are not authorized to visit this page", status: :unprocessable_entity
+        end
+    end
+    
 end
