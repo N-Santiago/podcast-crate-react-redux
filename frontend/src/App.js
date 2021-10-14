@@ -31,8 +31,9 @@ class App extends React.Component {
         <Switch>
             <Route exact path='/' component={Home}/>
             <Route exact path='/about' component={About}/>
-            {/* <Route exact path='/signup' component={Signup} />
-            <Route exact path='/login' component={Login} /> */}
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path="/protected" component={withAuth(Protected)} />
             <Route exact path='/podcasts/new' component={withAuth(PodcastInput)}/>
             <Route exact path='/podcasts' render={(routerProps) => <Podcasts {...routerProps} podcasts={this.props.podcasts}/>}/>
             <Route exact path='/podcasts/:id/edit' render={(routerProps) => {
