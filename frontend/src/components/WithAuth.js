@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { checkAuth } from "../actions/index";
 import LoadingIndicator from "./LoadingIndicator";
-// import Login from "./Login";
+import Login from "./Login";
 
 function withAuth(WrappedComponent) {
   class Wrapper extends React.Component {
@@ -17,7 +17,7 @@ function withAuth(WrappedComponent) {
       } else if (!this.props.loggedIn) {
         return (
           <>
-            {/* <Login /> */}
+            <Login />
             <p>You need to login to view this page.</p>
           </>
         );
@@ -41,3 +41,4 @@ function withAuth(WrappedComponent) {
 }
 
 export default withAuth;
+
