@@ -27,7 +27,7 @@ function withAuth(WrappedComponent) {
     }
   }
 
-  const mapStateToProps = ({auth: { authChecked, loggedIn, currentUser }}) => {
+  const mapStateToProps = ({authorization: { authChecked, loggedIn, currentUser }}) => {
     return { authChecked, loggedIn, currentUser };
   };
 
