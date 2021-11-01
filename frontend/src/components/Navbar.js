@@ -40,45 +40,48 @@ export default function NavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" 
+      <AppBar 
+        position="fixed" 
         classes={{ 
             root: classes.customColor, 
-      }}
+        }}
       >
         <Toolbar>
-          <Typography variant="h3" className={classes.title}>
-            Podcast Crate
+          <Typography variant="h6" className={classes.title} >
+            <strong>Podcast Crate</strong>
           </Typography>
-          <Button color="inherit" component={Link} href={"/"}><HomeIcon/></Button>
-          <Button color="inherit" component={Link} href={"/about"}><strong>About</strong></Button>
-          <div>
-              <Button
-                roboto-label="podcasts"
-                roboto-controls="menu-appbar"
-                roboto-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <strong>Podcasts</strong>
-              </Button> 
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem color="inherit" component={Link} href={"/podcasts"} onClick={handleClose}>Podcasts</MenuItem>
-                <MenuItem color="inherit" component={Link} href={"/podcasts/new"} onClick={handleClose}>New</MenuItem>
-              </Menu>
+          <div className={classes.buttons}>
+            <Button color="inherit" component={Link} href={"/"}><HomeIcon/></Button>
+            <Button color="inherit" component={Link} href={"/about"}><strong>About</strong></Button>
+            <Button color="inherit" component={Link} href={"/login"}><strong>Login</strong></Button>
+            <Button color="inherit" component={Link} href={"/signup"}><strong>Signup</strong></Button>
+            <Button
+              roboto-label="podcasts"
+              roboto-controls="menu-appbar"
+              roboto-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+            >
+              <strong>Podcasts</strong>
+            </Button> 
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              <MenuItem color="inherit" component={Link} href={"/podcasts"} onClick={handleClose}>Podcasts</MenuItem>
+              <MenuItem color="inherit" component={Link} href={"/podcasts/new"} onClick={handleClose}>New</MenuItem>
+            </Menu>
             </div>
         </Toolbar>
       </AppBar>
