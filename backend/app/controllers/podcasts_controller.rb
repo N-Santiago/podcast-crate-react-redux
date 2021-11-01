@@ -9,6 +9,7 @@ class PodcastsController < ApplicationController
     end 
 
     def create
+        # podcast = current_user.podcast.new(podcast_params)
         podcast = Podcast.new(podcast_params)
         if podcast.save
             render json: podcast
@@ -46,7 +47,7 @@ class PodcastsController < ApplicationController
     end 
 
     def podcast_params
-        params.permit(:title, :image, :website, :user_id)
+        params.permit(:title, :image, :website)
     end 
 
     def unauthorized_check

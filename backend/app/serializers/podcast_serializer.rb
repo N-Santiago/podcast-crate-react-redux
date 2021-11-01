@@ -1,5 +1,5 @@
 class PodcastSerializer < ActiveModel::Serializer
-  attributes :id, :title, :user, :image_format, :website 
+  attributes :id, :title, :image_format, :website 
   has_many :episodes 
 
   def image_format
