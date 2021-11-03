@@ -1,7 +1,7 @@
 class PodcastsController < ApplicationController
     before_action :set_podcast, only: [:show, :update, :destroy]
     before_action :unauthorized_check, only: [:update, :destroy]
-    # before_action :authenticate_user!
+    before_action :authenticate_user!, only: [:create]
     
     def index 
         podcasts = Podcast.all.with_attached_image
@@ -9,8 +9,8 @@ class PodcastsController < ApplicationController
     end 
 
     def create
-        # podcast = current_user.podcast.new(podcast_params)
-        podcast = Podcast.new(podcast_params)
+        podcast = current_user.podcasts.new(podcast_params)
+        # podcast = Podcast.new(podcast_params)
         if podcast.save
             render json: podcast
         else

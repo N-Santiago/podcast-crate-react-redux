@@ -1,6 +1,7 @@
 class CurrentUserController < ApplicationController
   # before_action :authenticate_user!
   def index
-    render json: current_user, status: :ok
+    # byebug 
+    render json: UserSerializer.new(current_user).serialized_json, status: :ok
   end
 end

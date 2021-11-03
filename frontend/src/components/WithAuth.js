@@ -8,7 +8,7 @@ function withAuth(WrappedComponent) {
   class Wrapper extends React.Component {
     
     componentDidMount() {
-      this.props.checkAuth();
+      this.props.checkAuth().then(result => console.log(result));
     }
 
     render() {
