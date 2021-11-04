@@ -1,4 +1,4 @@
-
+import { getToken } from './auth'
 
 export const editPodcast = (podcast, podcastId, history) => {
   debugger 
@@ -6,6 +6,7 @@ export const editPodcast = (podcast, podcastId, history) => {
         fetch(`http://localhost:3000/podcasts/${podcastId}`, {
             method: 'PATCH',
             headers: {
+              Authorization: getToken()
             },
             body: podcast
         })

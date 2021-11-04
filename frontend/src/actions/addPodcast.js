@@ -1,10 +1,11 @@
-
+import { getToken } from './auth'
 
 export const addPodcast = (podcast, history) => {
     return (dispatch) => {
         fetch('http://localhost:3000/podcasts', {
             method: 'POST',
             headers: {
+              Authorization: getToken()
             },
             body: podcast
         })

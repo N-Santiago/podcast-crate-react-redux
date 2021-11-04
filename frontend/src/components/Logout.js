@@ -21,7 +21,7 @@ const Logout = ({ logoutUser }) => {
   }
 
   return (
-    <a href="" style={link} onClick={handleClick}>Logout</a>
+    <a href="#" style={link} onClick={handleClick}>Logout</a>
   );
 };
 

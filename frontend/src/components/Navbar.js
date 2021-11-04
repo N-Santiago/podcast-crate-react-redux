@@ -8,6 +8,9 @@ import Link from '@material-ui/core/Link';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import HomeIcon from '@material-ui/icons/Home';
+import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { checkAuth } from '../actions/auth.js'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +32,13 @@ export default function NavBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
+  const loggedIn = useSelector(state => state.authorization.loggedIn)
+  const dispatch = useDispatch()
+  
+  useEffect(() => {
+    dispatch(checkAuth())
+  }, [])
+  
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -53,8 +62,10 @@ export default function NavBar() {
           <div className={classes.buttons}>
             <Button color="inherit" component={Link} href={"/"}><HomeIcon/></Button>
             <Button color="inherit" component={Link} href={"/about"}><strong>About</strong></Button>
+            {loggedIn ? <Button color="inherit" component={Link} href={"/logout"}><strong>Logout</strong></Button> : (<>
             <Button color="inherit" component={Link} href={"/login"}><strong>Login</strong></Button>
             <Button color="inherit" component={Link} href={"/signup"}><strong>Signup</strong></Button>
+            </>)}
             <Button
               roboto-label="podcasts"
               roboto-controls="menu-appbar"
