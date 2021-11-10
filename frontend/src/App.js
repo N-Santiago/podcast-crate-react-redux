@@ -17,9 +17,7 @@ import Logout from "./components/Logout";
 import { connect } from 'react-redux';
 import { fetchPodcasts } from './actions/fetchPodcasts';
 import withAuth from "./components/WithAuth";
-
-const ProtectedPodcastInput = withAuth(PodcastInput)
-const AuthenticatedHome = withAuth(Home)
+import { wrappedComponents } from './components/index';
 
 class App extends React.Component {
   
@@ -33,12 +31,12 @@ class App extends React.Component {
         < Navbar />
         < Toolbar />
         <Switch>
-            <Route exact path='/' render={(routerProps) => <AuthenticatedHome {...routerProps}/>}/>
+            <Route exact path='/' render={(routerProps) => <wrappedComponents.AuthenticatedHome {...routerProps}/>}/>
             <Route exact path='/about' component={About}/>
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/logout' component={Logout} />
-            <Route exact path='/podcasts/new' render={(routerProps) => <ProtectedPodcastInput protected {...routerProps} />}/>
+            <Route exact path='/podcasts/new' render={(routerProps) => <wrappedComponents.ProtectedPodcastInput protected {...routerProps} />}/>
             <Route exact path='/podcasts' render={(routerProps) => <Podcasts {...routerProps} podcasts={this.props.podcasts}/>}/>
             <Route exact path='/podcasts/:id/edit' render={(routerProps) => {
                 const podcast = this.props.podcasts.find(podcast => podcast.id === parseInt(routerProps.match.params.id))  
