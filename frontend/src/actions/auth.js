@@ -70,10 +70,10 @@ export const loginUser = (credentials) => {
           });
         }
       });
-    };
-  };
+   };
+};
   
-  export const logoutUser = () => {
+export const logoutUser = () => {
     return (dispatch) => {
         return fetch("http://localhost:3000/logout", {
             method: "DELETE",
@@ -83,7 +83,7 @@ export const loginUser = (credentials) => {
                 Authorization: getToken(),
             },
         }).then((res) => {
-          deleteToken()
+            deleteToken()
             if (res.ok) {
                 return res.json()
                 .then(() => dispatch({ type: NOT_AUTHENTICATED }))
@@ -108,13 +108,12 @@ export const checkAuth = () => {
       }).then((res) => {
         if (res.ok) {
           return res
-                  .json()
-                  .then(user => {
-                    console.log(user)
-                    user.data ? dispatch({type: AUTHENTICATED, payload: user}) : dispatch({type: NOT_AUTHENTICATED})})
+          .json()
+          .then(user => {         
+          user.data ? dispatch({type: AUTHENTICATED, payload: user}) : dispatch({type: NOT_AUTHENTICATED})})
         } else {
           return Promise.reject(dispatch({type: NOT_AUTHENTICATED})) 
         }
-      });
-    };
-  };
+     });
+   };
+};
