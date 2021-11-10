@@ -14,7 +14,7 @@ function withAuth(WrappedComponent) {
     render() {
       if (!this.props.authChecked) {
         return <LoadingIndicator />;
-      } else if (!this.props.loggedIn) {
+      } else if (!this.props.loggedIn && this.props.protected) {
         return (
           <>
             <Login />

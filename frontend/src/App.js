@@ -13,11 +13,13 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-// import Logout from "./components/Logout";
-import Protected from "./components/Protected";
-import withAuth from "./components/WithAuth";
+import Logout from "./components/Logout";
 import { connect } from 'react-redux';
 import { fetchPodcasts } from './actions/fetchPodcasts';
+import withAuth from "./components/WithAuth";
+
+const ProtectedPodcastInput = withAuth(PodcastInput)
+const AuthenticatedHome = withAuth(Home)
 
 class App extends React.Component {
   
@@ -31,12 +33,12 @@ class App extends React.Component {
         < Navbar />
         < Toolbar />
         <Switch>
-            <Route exact path='/' component={Home}/>
+            <Route exact path='/' render={(routerProps) => <AuthenticatedHome {...routerProps}/>}/>
             <Route exact path='/about' component={About}/>
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/login' component={Login} />
-            <Route exact path="/protected" component={withAuth(Protected)} />
-            <Route exact path='/podcasts/new' component={withAuth(PodcastInput)}/>
+            <Route exact path='/logout' component={Logout} />
+            <Route exact path='/podcasts/new' render={(routerProps) => <ProtectedPodcastInput protected {...routerProps} />}/>
             <Route exact path='/podcasts' render={(routerProps) => <Podcasts {...routerProps} podcasts={this.props.podcasts}/>}/>
             <Route exact path='/podcasts/:id/edit' render={(routerProps) => {
                 const podcast = this.props.podcasts.find(podcast => podcast.id === parseInt(routerProps.match.params.id))  

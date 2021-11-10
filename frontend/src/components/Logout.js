@@ -1,13 +1,16 @@
 import React from "react";
-import { connect } from "react-redux";
 import { logoutUser } from "../actions/auth";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from 'react-redux'
 
-const Logout = ({ logoutUser }) => {
+const Logout = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
   
-  const handleClick = () => {
-    logoutUser().then(() => history.push("/"));
+  const handleClick = (e) => {
+    e.preventDefault()
+    dispatch(logoutUser())
+    history.push("/")
   };
 
   const link = {
@@ -21,14 +24,8 @@ const Logout = ({ logoutUser }) => {
   }
 
   return (
-    <a href="" style={link} onClick={handleClick}>Logout</a>
+    <button href="#" style={link} onClick={handleClick}>Logout</button>
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    logoutUser: () => dispatch(logoutUser())
-  };
-};
-
-export default connect(null, mapDispatchToProps)(Logout);
+export default Logout;

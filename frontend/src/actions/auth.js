@@ -5,7 +5,7 @@ const setToken = (token) => {
     localStorage.setItem("lastLoginTime", new Date(Date.now()).getTime());
 };
   
-const getToken = () => {
+export const getToken = () => {
     const now = new Date(Date.now()).getTime();
     const timeAllowed = 1000 * 60 * 30;
     const timeSinceLastLogin = now - localStorage.getItem("lastLoginTime");
@@ -13,6 +13,11 @@ const getToken = () => {
         return localStorage.getItem("token");
     }
 };
+
+const deleteToken = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("lastLoginTime");
+}
 
 export const signupUser = (credentials) => {
     return (dispatch) => {
@@ -78,8 +83,10 @@ export const loginUser = (credentials) => {
                 Authorization: getToken(),
             },
         }).then((res) => {
+          deleteToken()
             if (res.ok) {
-                return dispatch({ type: NOT_AUTHENTICATED })
+                return res.json()
+                .then(() => dispatch({ type: NOT_AUTHENTICATED }))
             } else {
                 return res.json().then((errors) => {
                     dispatch({ type: NOT_AUTHENTICATED })
