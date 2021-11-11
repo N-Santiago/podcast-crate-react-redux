@@ -13,7 +13,7 @@ const LoadingIndicator = (props) => {
             }}
         >
             <h3>Loading</h3>
-            <Loader type="ThreeDots" color="blue" height="100" width="100" />
+            <Loader type="ThreeDots" color="gray" height="100" width="100" />
         </div>
     );  
 }

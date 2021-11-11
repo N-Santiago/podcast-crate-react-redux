@@ -53,11 +53,11 @@ export default function NavBar() {
             <strong>Podcast Crate</strong>
           </Typography>
           <div className={classes.buttons}>
-            <Button color="inherit" component={Link} href={"/"}><HomeIcon/></Button>
-            <Button color="inherit" component={Link} href={"/about"}><strong>About</strong></Button>
-            { !loggedIn ? (<><Button color="inherit" component={Link} href={"/login"}><strong>Login</strong></Button>
-              <Button color="inherit" component={Link} href={"/signup"}><strong>Signup</strong></Button></>) : 
-              <Button color="inherit" component={Link} href={"/logout"}><strong>Logout</strong></Button>
+            <Button color="inherit" href={"/"}><HomeIcon/></Button>
+            <Button color="inherit" href={"/about"}><strong>About</strong></Button>
+            { !loggedIn ? (<><Button color="inherit" href={"/login"}><strong>Login</strong></Button>
+              <Button color="inherit" href={"/signup"}><strong>Signup</strong></Button></>) : 
+              <Button color="inherit" href={"/logout"}><strong>Logout</strong></Button>
             }
             <Button
               roboto-label="podcasts"
@@ -92,4 +92,3 @@ export default function NavBar() {
     </div>
   );
 }
-

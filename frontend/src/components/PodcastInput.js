@@ -29,12 +29,18 @@ class PodcastInput extends React.Component {
             <div>
                 <h1>Enter a Podcast</h1>
                 <form onSubmit={this.handleSubmit}>
+                <fieldset>
                     <label>Title:</label>
-                    <input type='text' placeholder='Title' value={this.state.title} name='title' onChange={this.handleChange} /><br /><br />
+                    <input type='text' placeholder='Title' value={this.state.title} name='title' onChange={this.handleChange}/><br /><br />
+                </fieldset>
+                <fieldset>
                     <label>Image:</label>
                     <input type='file' placeholder='Image' value={this.state.image} name='image' accept='image/*' encType="multipart/form-data" onChange={this.handleChange} /><br /><br />
+                </fieldset>
+                <fieldset>
                     <label>Website:</label>
                     <input type='text' placeholder='Website' value={this.state.website} name='website' onChange={this.handleChange} /><br /><br />
+                </fieldset>
                     <input type="submit" value="Submit" /> 
                 </form>
             </div>

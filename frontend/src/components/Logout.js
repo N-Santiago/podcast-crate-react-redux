@@ -18,7 +18,7 @@ const Logout = () => {
     height: '64px',
     padding: '12px',
     margin: '1em 0 2em',
-    background: 'blue',
+    background: 'gray',
     textDecoration: 'none',
     color: 'white',
   }
