@@ -1,7 +1,5 @@
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Link from '@material-ui/core/Link';
-import ListItemText from '@material-ui/core/ListItemText';
+import { ListItem, Link, ListItemText } from '@material-ui/core/';
 
 const About = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import '@fontsource/roboto';
-import Toolbar from '@material-ui/core/Toolbar';
+import { Toolbar, Box } from '@material-ui/core/';
 import Error from './components/Error';
 import Podcast from './components/Podcast';
 import PodcastEdit from './components/PodcastEdit';
@@ -13,7 +13,6 @@ import Logout from "./components/Logout";
 import { connect } from 'react-redux';
 import { fetchPodcasts } from './actions/fetchPodcasts';
 import { wrappedComponents } from './components/index';
-import Box from "@material-ui/core/Box";
 
 class App extends React.Component {
   
