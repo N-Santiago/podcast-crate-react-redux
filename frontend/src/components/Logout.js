@@ -2,6 +2,7 @@ import React from "react";
 import { logoutUser } from "../actions/auth";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux'
+import Button from '@material-ui/core/Button';
 
 const Logout = () => {
   const history = useHistory();
@@ -13,18 +14,11 @@ const Logout = () => {
     history.push("/")
   };
 
-  const link = {
-    width: '100px',
-    height: '64px',
-    padding: '12px',
-    margin: '1em 0 2em',
-    background: 'gray',
-    textDecoration: 'none',
-    color: 'white',
-  }
-
   return (
-    <button href="#" style={link} onClick={handleClick}>Logout</button>
+    <div class="logout">
+      <h1>Are You Sure You Want To Logout?</h1>
+      <Button variant="contained" size="large" color="gray" href="#" onClick={handleClick}>Yes</Button> <Button variant="contained" size="large" href={"/podcasts"}>No</Button>
+    </div> 
   );
 };
 

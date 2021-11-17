@@ -30,7 +30,8 @@ class App extends React.Component {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          minHeight="100vh">
+          minHeight="100vh"
+          textAlign="center">
         < Toolbar />
         <Switch>
             <Route exact path='/' render={(routerProps) => <wrappedComponents.AuthenticatedHome {...routerProps}/>}/>
