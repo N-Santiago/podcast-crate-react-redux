@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addPodcast } from '../actions/index'
+import { Button } from '@material-ui/core'
 
 class PodcastInput extends React.Component {
     state = {
@@ -40,8 +41,8 @@ class PodcastInput extends React.Component {
                 <fieldset>
                     <label>Website:</label>
                     <input type='text' placeholder='Website' value={this.state.website} name='website' onChange={this.handleChange} /><br /><br />
-                </fieldset>
-                    <input type="submit" value="Submit" /> 
+                </fieldset><br/>
+                    <Button variant="contained" size="small" color="gray" type='submit'>Submit</Button>
                 </form>
             </div>
         )

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { signupUser } from "../actions/auth";
+import { Button } from "@material-ui/core";
 
 class Signup extends React.Component {
   state = {
@@ -52,11 +53,8 @@ class Signup extends React.Component {
             onChange={this.handleChange}
             value={this.state.password}
           />
-        </fieldset>
-        <input
-          type='submit'
-          value='Sign Up'
-        />
+        </fieldset><br/>
+        <Button variant="contained" size="small" color="gray" type='submit'>Sign Up</Button>
       </form>
     );
   }
