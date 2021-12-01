@@ -91,14 +91,14 @@ GEM
     dry-core (0.7.1)
       concurrent-ruby (~> 1.0)
     erubi (1.10.0)
-    fast_jsonapi (1.5)
-      activesupport (>= 4.2)
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jsonapi-renderer (0.2.2)
+    jsonapi-serializer (2.2.0)
+      activesupport (>= 4.2)
     jwt (2.2.3)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -200,7 +200,7 @@ DEPENDENCIES
   byebug
   devise
   devise-jwt
-  fast_jsonapi
+  jsonapi-serializer
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   pry
