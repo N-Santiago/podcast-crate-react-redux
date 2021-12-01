@@ -45,11 +45,11 @@ export default function NavBar() {
       }}
       >
         <Toolbar>
-          <Typography variant="h3" className={classes.title}>
-            Podcast Crate
+          <Typography variant="h6" className={classes.title}>
+            <strong>Podcast Crate</strong>
           </Typography>
-          <Button color="inherit" component={Link} href={"/"}><HomeIcon/></Button>
-          <Button color="inherit" component={Link} href={"/about"}><strong>About</strong></Button>
+          <Button color="inherit" href={"/"}><HomeIcon/></Button>
+          <Button color="inherit" href={"/about"}><strong>About</strong></Button>
           <div>
               <Button
                 roboto-label="podcasts"

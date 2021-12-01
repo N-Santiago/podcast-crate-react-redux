@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { editPodcast } from '../actions/index'
+import { Button, Box } from '@material-ui/core'
 
 class PodcastEdit extends React.Component {
     state = {
@@ -27,16 +28,29 @@ class PodcastEdit extends React.Component {
     render() {
         return (
             <div>
-                <h1>Edit Podcast</h1>
+                <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    minHeight="100vh"
+                    textAlign="center">
                 <form onSubmit={this.handleSubmit}>
-                    <label>Title:</label>
-                    <input type='text' placeholder='Title' value={this.state.title} name='title' onChange={this.handleChange} /><br /><br />
-                    <label>Image:</label>
-                    <input type='file' placeholder='Image' value={this.state.image} name='image' accept='image/*' encType="multipart/form-data" onChange={this.handleChange} /><br /><br />
-                    <label>Website:</label>
-                    <input type='text' placeholder='Website' value={this.state.website} name='website' onChange={this.handleChange} /><br /><br />
-                    <input type="submit" value="Submit" /> 
+                    <h1>Edit Podcast</h1>
+                    <fieldset>
+                        <label>Title:</label>
+                        <input type='text' placeholder='Title' value={this.state.title} name='title' onChange={this.handleChange}/><br /><br />
+                    </fieldset>
+                    <fieldset>
+                        <label>Image:</label>
+                        <input type='file' placeholder='Image' value={this.state.image} name='image' accept='image/*' encType="multipart/form-data" onChange={this.handleChange} /><br /><br />
+                    </fieldset>
+                    <fieldset>
+                        <label>Website:</label>
+                        <input type='text' placeholder='Website' value={this.state.website} name='website' onChange={this.handleChange} /><br /><br />
+                    </fieldset><br/>
+                        <Button variant="contained" size="small" color="inherit" type='submit'>Submit</Button>
                 </form>
+                </Box>
             </div>
         )
     }

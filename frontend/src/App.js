@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import '@fontsource/roboto';
-import Toolbar from '@material-ui/core/Toolbar';
+import { Toolbar, Box } from '@material-ui/core/';
 import Home from './components/Home'
 import About from './components/About'
 import Error from './components/Error';
@@ -24,6 +24,11 @@ class App extends React.Component {
     return (
       <div className="App">
         < Navbar />
+        <Box
+          justifyContent="center"
+          alignItems="center"
+          minHeight="100vh"
+          textAlign="center">
         < Toolbar />
         <Switch>
             <Route exact path='/' component={Home}/>
@@ -50,6 +55,7 @@ class App extends React.Component {
             />
             <Route component={Error}/>
         </Switch>
+        </Box>
         <Toolbar />
         <Footer />
       </div>

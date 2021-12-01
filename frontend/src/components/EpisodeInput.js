@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addEpisode } from '../actions/addEpisode';
 import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
 
 class EpisodeInput extends React.Component {
 
@@ -30,7 +29,7 @@ class EpisodeInput extends React.Component {
         return (
             <div>
                 <div>
-                    <Button color="inherit" component={Link} href={`/podcasts/${this.props.podcast.id}/edit`}><h2>Edit Podcast</h2></Button>
+                    <Button color="inherit" href={`/podcasts/${this.props.podcast.id}/edit`}><h2>Edit Podcast</h2></Button>
                 </div>
                 <h2>Enter an Episode</h2>
                 <form onSubmit={this.handleSubmit}>
@@ -44,7 +43,7 @@ class EpisodeInput extends React.Component {
                     <p><i><small>Hope by complicating things, this turn out to be fun.</small></i></p>
                     <input type='text' placeholder='Spotify Embedded URL' value={this.state.spotify_link} name='spotify_link' onChange={this.handleChange} /><br /><br />
                     <input type="submit" value="Submit" /> 
-                </form>
+                </form><br/>
             </div>
         )
     }

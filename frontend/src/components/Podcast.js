@@ -12,7 +12,9 @@ const Podcast = ({id, title, image_format, website, history, episodes}) => {
                     <Link to={`/podcasts/${id}`}><img id={`podcast-${id}`} src={image_format ? image_format.url : image} width={300} height={300} alt={"podcast"} /></Link>
                     <p>{website}</p>
             </div>
+            <div>
             {(!!history && history.location.pathname === `/podcasts/${id}`) ? <EpisodesContainer podcast={{id, title, image_format, website, episodes}} /> : null} 
+            </div>
         </div>
     )
 };
