@@ -54,7 +54,7 @@ class Signup extends React.Component {
             value={this.state.password}
           />
         </fieldset><br/>
-        <Button variant="contained" size="small" color="gray" type='submit'>Sign Up</Button>
+        <Button variant="contained" size="small" color="inherit" type='submit'>Sign Up</Button>
       </form>
     );
   }

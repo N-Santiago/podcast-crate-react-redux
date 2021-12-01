@@ -15,9 +15,9 @@ const Logout = () => {
   };
 
   return (
-    <div class="logout">
+    <div className="logout">
       <h1>Are You Sure You Want To Logout?</h1>
-      <Button variant="contained" size="large" color="gray" href="#" onClick={handleClick}>Yes</Button> <Button variant="contained" size="large" href={"/podcasts"}>No</Button>
+      <Button variant="contained" size="large" color="inherit" href="#" onClick={handleClick}>Yes</Button> <Button variant="contained" size="large" color="inherit" href={"/podcasts"}>No</Button>
     </div> 
   );
 };

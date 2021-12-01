@@ -42,7 +42,7 @@ class PodcastInput extends React.Component {
                     <label>Website:</label>
                     <input type='text' placeholder='Website' value={this.state.website} name='website' onChange={this.handleChange} /><br /><br />
                 </fieldset><br/>
-                    <Button variant="contained" size="small" color="gray" type='submit'>Submit</Button>
+                    <Button variant="contained" size="small" color="inherit" type='submit'>Submit</Button>
                 </form>
             </div>
         )
