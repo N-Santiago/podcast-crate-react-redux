@@ -10,3 +10,5 @@ const auth = ( state = { authChecked: false, user: null }, action ) => {
         return state
     }
 }
+
+export default auth;
