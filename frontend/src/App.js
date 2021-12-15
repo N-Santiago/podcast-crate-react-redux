@@ -13,7 +13,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-// import Logout from "./components/Logout";
+import Logout from "./components/Logout";
 import { connect } from 'react-redux';
 import { fetchPodcasts } from './actions/fetchPodcasts';
 
@@ -38,7 +38,7 @@ class App extends React.Component {
             <Route exact path='/about' component={About}/>
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/login' component={Login} />
-            {/* <Route exact path='/logout' component={Logout} /> */}
+            <Route exact path='/logout' component={Logout} />
             <Route exact path='/podcasts/new' component={PodcastInput}/>
             <Route exact path='/podcasts' render={(routerProps) => <Podcasts {...routerProps} podcasts={this.props.podcasts}/>}/>
             <Route exact path='/podcasts/:id/edit' render={(routerProps) => {

@@ -5,9 +5,12 @@ const auth = ( state = { authChecked: false, user: null }, action ) => {
   
       case 'AUTHENTICATION_CHECKED':
         return { authChecked: true, user: null }
+
+      case 'UNAUTHENTICATED':  
+        return { authChecked: false, user: null}
   
       default:
-        return state
+        return state  
     }
 }
 

@@ -28,3 +28,8 @@ export const signupUser = ( credentials ) => ( dispatch ) => fetcher( '/users', 
     return data
   } )
   .then( data => dispatch( { type: 'AUTHENTICATED', payload: data } ) )
+
+export const logoutUser = ( credentials ) => ( dispatch ) => { 
+  deleteToken() 
+  dispatch( { type: 'UNAUTHENTICATED'} )
+}   
