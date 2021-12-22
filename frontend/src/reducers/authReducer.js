@@ -1,17 +1,26 @@
-const auth = ( state = { authChecked: false, user: null }, action ) => {
-    switch ( action.type ) {
-      case 'AUTHENTICATED':
-        return { authChecked: true, user: action.payload }
-  
-      case 'AUTHENTICATION_CHECKED':
-        return { authChecked: true, user: null }
+const initialState = {
+  authChecked: false,
+  loggedIn: false,
+  currentUser: {}
+};
 
-      case 'UNAUTHENTICATED':  
-        return { authChecked: false, user: null}
-  
-      default:
-        return state  
-    }
+const auth = (state = initialState, action) => {
+  switch (action.type) {
+    case 'AUTHENTICATED':
+      return {
+        authChecked: true,
+        loggedIn: true,
+        currentUser: action.payload,
+      };
+    case 'UNAUTHENTICATED':
+      return {
+        authChecked: true,
+        loggedIn: false,
+        currentUser: {}
+      };
+    default:
+      return state;
+  }
 }
 
 export default auth;

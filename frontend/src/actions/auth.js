@@ -33,3 +33,24 @@ export const logoutUser = ( credentials ) => ( dispatch ) => {
   deleteToken() 
   dispatch( { type: 'UNAUTHENTICATED'} )
 }   
+
+export const checkAuth = () => {
+  return (dispatch) => {
+    return fetch("http://localhost:3000/current_user", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: setToken()
+      }
+    }).then((res) => {
+      if (res.ok) {
+        return res
+        .json()
+        .then(user => {         
+        user.data ? dispatch({type: 'AUTHENTICATED', payload: user}) : dispatch({type: 'UNAUTHENTICATED'})})
+      } else {
+        return Promise.reject(dispatch({type: 'UNAUTHENTICATED'})) 
+      }
+   });
+ };
+};
