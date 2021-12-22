@@ -48,9 +48,10 @@ export default function NavBar() {
           <div className={classes.buttons}>
             <Button color="inherit" href={"/"}><HomeIcon/></Button>
             <Button color="inherit" href={"/about"}><strong>About</strong></Button>
-            <Button color="inherit" href={"/login"}><strong>Login</strong></Button>
-            <Button color="inherit" href={"/signup"}><strong>Signup</strong></Button> 
-            <Button color="inherit" href={"/logout"}><strong>Logout</strong></Button>
+            { !loggedIn ? (<><Button color="inherit" href={"/login"}><strong>Login</strong></Button>
+              <Button color="inherit" href={"/signup"}><strong>Signup</strong></Button></>) : 
+              <Button color="inherit" href={"/logout"}><strong>Logout</strong></Button>
+            }
             <Button
               roboto-label="podcasts"
               roboto-controls="menu-appbar"
