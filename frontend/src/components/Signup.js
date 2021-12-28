@@ -21,7 +21,7 @@ class Signup extends React.Component {
     const { email, password } = this.state;
     this.props
       .signupUser({ email, password })
-      .then(() => this.props.history.push("/"))
+      .then(() => this.props.history.push("/podcasts"))
       .catch((errors) => this.setState({ errors }));
   };
 

@@ -21,7 +21,7 @@ class Login extends React.Component {
     const { email, password } = this.state;
     this.props
       .dispatchLoginUser({ email, password })
-      .then(() => this.props.history.push("/"))
+      .then(() => this.props.history.push("/podcasts"))
       .catch(() => this.setState({ error: true }));
   };
 
