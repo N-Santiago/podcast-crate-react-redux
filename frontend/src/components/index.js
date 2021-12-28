@@ -1,11 +1,11 @@
 import About from "./About";
-import Home from './Home';
 import Podcasts from './Podcasts';
 import PodcastInput from "./PodcastInput";
 import PodcastEdit from "./PodcastEdit";
+import Logout from "./Logout";
 import withAuth from "./WithAuth";
 
-const authComponents = {About, Home, Podcasts}
+const authComponents = {About, Podcasts, Logout}
 const protComponents = {PodcastEdit, PodcastInput}
 
 const authenticatedComponents = {}
@@ -18,7 +18,5 @@ for (const [key, value] of Object.entries(authComponents)) {
 for (const [key, value] of Object.entries(protComponents)) {
     protectedComponents[`Protected${key}`] = withAuth(value)
 }
-
-
 
 export const wrappedComponents = {...authenticatedComponents, ...protectedComponents}

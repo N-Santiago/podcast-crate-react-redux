@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles, AppBar, Toolbar, Typography, Button, Link, MenuItem, Menu } from '@material-ui/core/';
-import HomeIcon from '@material-ui/icons/Home';
 import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles((theme) => ({
@@ -46,7 +45,6 @@ export default function NavBar() {
             <strong>Podcast Crate</strong>
           </Typography>
           <div className={classes.buttons}>
-            <Button color="inherit" href={"/"}><HomeIcon/></Button>
             <Button color="inherit" href={"/about"}><strong>About</strong></Button>
             { !loggedIn ? (<><Button color="inherit" href={"/login"}><strong>Login</strong></Button>
               <Button color="inherit" href={"/signup"}><strong>Signup</strong></Button></>) : 
