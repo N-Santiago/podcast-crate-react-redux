@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { signupUser } from "../actions/auth";
 import { Button } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 
 class Signup extends React.Component {
   state = {
@@ -27,35 +28,37 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h1>Sign Up</h1>
-        <p>{this.state.errors.status.message}</p>
-        <fieldset>
-          <label htmlFor='email'>
-            Email:
-          </label>
-          <input
-            type='text'
-            name='email'
-            id='email'
-            onChange={this.handleChange}
-            value={this.state.email}
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor='password'>
-            Password:
-          </label>
-          <input
-            type='password'
-            name='password'
-            id='password'
-            onChange={this.handleChange}
-            value={this.state.password}
-          />
-        </fieldset><br/>
-        <Button variant="contained" size="small" color="inherit" type='submit'>Sign Up</Button>
-      </form>
+      <Box sx={{ p: 2, border: '1px solid grey' }}>
+        <form onSubmit={this.handleSubmit}>
+          <h1>Sign Up</h1>
+          <p>{this.state.errors.status.message}</p>
+          <fieldset>
+            <label htmlFor='email'>
+              Email:
+            </label>
+            <input
+              type='text'
+              name='email'
+              id='email'
+              onChange={this.handleChange}
+              value={this.state.email}
+            />
+          </fieldset>
+          <fieldset>
+            <label htmlFor='password'>
+              Password:
+            </label>
+            <input
+              type='password'
+              name='password'
+              id='password'
+              onChange={this.handleChange}
+              value={this.state.password}
+            />
+          </fieldset><br/>
+          <Button variant="contained" size="small" color="inherit" type='submit'>Sign Up</Button>
+        </form>
+      </Box>
     );
   }
 }

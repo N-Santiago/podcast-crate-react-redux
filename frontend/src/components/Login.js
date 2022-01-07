@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { loginUser } from "../actions/index";
-import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
+import { Box } from "@material-ui/core";
 
 class Login extends React.Component {
   state = {
@@ -28,38 +28,36 @@ class Login extends React.Component {
 
   render() {
     return (
-      < Box sx={{  
-        borderColor: 'grey' 
-      }}>
-      <form onSubmit={this.handleSubmit} >
-        <h3>Log In</h3>
-        <p>{this.state.error && "Invalid email or password"}</p>
-        <fieldset>
-          <label htmlFor='email'>
-            Email:
-          </label>
-          <input
-            type='text'
-            name='email'
-            id='email'
-            onChange={this.handleChange}
-            value={this.state.email}
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor='password'>
-            Password:
-          </label>
-          <input
-            type='password'
-            name='password'
-            id='password'
-            onChange={this.handleChange}
-            value={this.state.password}
-          />
-        </fieldset><br/>
-        <Button variant="contained" size="small" color="inherit" type='submit'>Log In</Button>
-      </form>
+      <Box sx={{ p: 2, border: '1px solid grey' }}>
+        <form onSubmit={this.handleSubmit} >
+          <h3>Log In</h3>
+          <p>{this.state.error && "Invalid email or password"}</p>
+          <fieldset>
+            <label htmlFor='email'>
+              Email:
+            </label>
+            <input
+              type='text'
+              name='email'
+              id='email'
+              onChange={this.handleChange}
+              value={this.state.email}
+            />
+          </fieldset>
+          <fieldset>
+            <label htmlFor='password'>
+              Password:
+            </label>
+            <input
+              type='password'
+              name='password'
+              id='password'
+              onChange={this.handleChange}
+              value={this.state.password}
+            />
+          </fieldset><br/>
+          <Button variant="contained" size="small" color="inherit" type='submit'>Log In</Button>
+        </form>
       </Box>
     );
   }
