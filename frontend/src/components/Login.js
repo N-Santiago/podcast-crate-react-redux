@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { loginUser } from "../actions/index";
+import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 
 class Login extends React.Component {
@@ -27,8 +28,11 @@ class Login extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h1>Log In</h1>
+      < Box sx={{  
+        borderColor: 'grey' 
+      }}>
+      <form onSubmit={this.handleSubmit} >
+        <h3>Log In</h3>
         <p>{this.state.error && "Invalid email or password"}</p>
         <fieldset>
           <label htmlFor='email'>
@@ -56,7 +60,7 @@ class Login extends React.Component {
         </fieldset><br/>
         <Button variant="contained" size="small" color="inherit" type='submit'>Log In</Button>
       </form>
-      
+      </Box>
     );
   }
 }
