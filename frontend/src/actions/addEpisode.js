@@ -10,7 +10,6 @@ export const addEpisode = (episode, podcastId, history) => {
         })
         .then(res => res.json())
         .then((podcast) => {
-            debugger 
             dispatch({ type: "CREATE_EPISODE", payload: podcast })
             history.push(`/podcasts/${podcastId}`)
         })

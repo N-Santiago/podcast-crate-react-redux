@@ -2,7 +2,7 @@ import Login from './Login'
 import * as React from 'react';
 import Box from "@material-ui/core/Box";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <div>
       <Box sx={{
@@ -14,7 +14,7 @@ const Home = () => {
         {<h1>Welcome to our Podcast App</h1>}
         {<h2>Feel free to share your favorites or have fun listening to the ones available.</h2>}
       </Box><br/>
-        < Login />
+        < Login history={props.history} />
     </div>
   );
 };

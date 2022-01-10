@@ -21,10 +21,11 @@ class Login extends React.Component {
     event.preventDefault();
     const { email, password } = this.state;
     this.props
-      .dispatchLoginUser({ email, password })
-      .then(() => this.props.history.push("/podcasts"))
-      .catch(() => this.setState({ error: true }));
+      .dispatchLoginUser({ email, password }) 
+      .then(() => this.props.history.push('/podcasts')) 
+      .catch(() => this.setState({ error: true }));   
   };
+  
 
   render() {
     return (
@@ -70,4 +71,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(null, mapDispatchToProps)(Login);
+
 

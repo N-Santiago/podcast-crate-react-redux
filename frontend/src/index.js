@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom'  
+import { Router } from 'react-router-dom'  
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
 import thunk from 'redux-thunk'
 import podcasts from './reducers/podcastReducer'
 import authorization from './reducers/authorizationReducer';
+import { createBrowserHistory } from 'history';
 
 const reducer = combineReducers({
   podcasts,
@@ -19,9 +20,11 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
 
+const history = createBrowserHistory();
+
 ReactDOM.render(
   <Provider store={ store }>
-    <Router >
+    <Router history={history} >
       <App />
     </Router>
   </Provider>  

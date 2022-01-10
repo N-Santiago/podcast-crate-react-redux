@@ -46,7 +46,7 @@ export const signupUser = (credentials) => {
     };
 };
 
-export const loginUser = (credentials) => {
+export const loginUser = (credentials, history) => {
     return (dispatch) => {
       return fetch("http://localhost:3000/login", {
         method: "POST",
@@ -61,8 +61,9 @@ export const loginUser = (credentials) => {
           return res
             .json()
             .then((userJson) =>
-              dispatch({ type: AUTHENTICATED, payload: userJson })
+              dispatch({ type: AUTHENTICATED, payload: userJson }),
             );
+ 
         } else {
           return res.json().then((errors) => {
             dispatch({ type: NOT_AUTHENTICATED });
