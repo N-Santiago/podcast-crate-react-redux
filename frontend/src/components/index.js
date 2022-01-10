@@ -3,9 +3,10 @@ import Podcasts from './Podcasts';
 import PodcastInput from "./PodcastInput";
 import PodcastEdit from "./PodcastEdit";
 import Logout from "./Logout";
+import Episodes from "./Episodes"
 import withAuth from "./WithAuth";
 
-const authComponents = {About, Podcasts, Logout}
+const authComponents = {About, Podcasts, Logout, Episodes}
 const protComponents = {PodcastEdit, PodcastInput}
 
 const authenticatedComponents = {}

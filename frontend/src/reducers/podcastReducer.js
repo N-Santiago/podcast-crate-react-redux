@@ -12,10 +12,11 @@ export default function podcasts(state = [], action) {
                 ...state.slice(index + 1)
             ]    
         case "CREATE_EPISODE":
+            const episodeIndex = state.findIndex(podcast => action.payload.podcast_id === podcast.id)
             return [
-                ...state.slice(0, index), 
-                {...state[index], episodes: [...state[index].episodes, action.payload]},
-                ...state.slice(index + 1)
+                ...state.slice(0, episodeIndex), 
+                {...state[episodeIndex], episodes: [...state[episodeIndex].episodes, action.payload]},
+                ...state.slice(episodeIndex + 1)
             ]
         default:
             return state;
