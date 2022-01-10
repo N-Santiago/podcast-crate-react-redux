@@ -1,6 +1,6 @@
 import Login from './Login'
 import * as React from 'react';
-import {Box} from '@material-ui/core/';
+import {Box, Button, Link} from '@material-ui/core/';
 
 const Home = (props) => {
   return (
@@ -15,7 +15,7 @@ const Home = (props) => {
         {<h2>Feel free to share your favorites or have fun listening to the ones available.</h2>}
       </Box><br/>
       < Login history={props.history} />
-      {<a href="/signup" color="inherit">New User? Please Signup</a>}  
+      <Button href="/signup" color="inherit">New User? Please Signup</Button>
     </div>
   );
 };
