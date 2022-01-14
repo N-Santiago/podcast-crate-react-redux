@@ -1,13 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import HomeIcon from '@material-ui/icons/Home';
+import { makeStyles, AppBar, Toolbar, Typography, Button, Link, MenuItem, Menu } from '@material-ui/core/';
+import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,9 +18,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function NavBar() {
+  
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const loggedIn = useSelector(state => state.authorization.loggedIn)
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -39,45 +34,49 @@ export default function NavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" 
+      <AppBar 
+        position="fixed" 
         classes={{ 
             root: classes.customColor, 
-      }}
+        }}
       >
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.title} >
             <strong>Podcast Crate</strong>
           </Typography>
-          <Button color="inherit" href={"/"}><HomeIcon/></Button>
-          <Button color="inherit" href={"/about"}><strong>About</strong></Button>
-          <div>
-              <Button
-                roboto-label="podcasts"
-                roboto-controls="menu-appbar"
-                roboto-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <strong>Podcasts</strong>
-              </Button> 
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem color="inherit" component={Link} href={"/podcasts"} onClick={handleClose}>Podcasts</MenuItem>
-                <MenuItem color="inherit" component={Link} href={"/podcasts/new"} onClick={handleClose}>New</MenuItem>
-              </Menu>
+          <div className={classes.buttons}>
+            <Button color="inherit" href={"/about"}><strong>About</strong></Button>
+            { !loggedIn ? (<><Button color="inherit" href={"/login"}><strong>Login</strong></Button>
+              <Button color="inherit" href={"/signup"}><strong>Signup</strong></Button></>) : 
+              <Button color="inherit" href={"/logout"}><strong>Logout</strong></Button>
+            }
+            <Button
+              roboto-label="podcasts"
+              roboto-controls="menu-appbar"
+              roboto-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+            >
+              <strong>Podcasts</strong>
+            </Button> 
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              <MenuItem color="inherit" component={Link} href={"/podcasts"} onClick={handleClose}>Podcasts</MenuItem>
+              <MenuItem color="inherit" component={Link} href={"/podcasts/new"} onClick={handleClose}>New</MenuItem>
+            </Menu>
             </div>
         </Toolbar>
       </AppBar>

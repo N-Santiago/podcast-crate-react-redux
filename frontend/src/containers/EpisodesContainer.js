@@ -6,11 +6,10 @@ import '@fontsource/roboto';
 class EpisodesContainer extends React.Component {
     
     render() { 
-        // debugger 
         return (
             <div>
-                < EpisodeInput podcast={this.props.podcast} />
-                < Episodes episodes={this.props.podcast.episodes} />
+                {(parseInt(this.props.podcast.user_id) === parseInt(this.props.currentUser?.data?.id)) ? < EpisodeInput podcast={this.props.podcast} /> : null}
+                < Episodes episodes={this.props.podcast.episodes}  /> 
             </div>
         )
     }

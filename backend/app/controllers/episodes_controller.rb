@@ -6,7 +6,6 @@ class EpisodesController < ApplicationController
     end 
 
     def create
-        # byebug
         podcast = Podcast.find_by(id: params[:podcast_id])
         if !!podcast 
             episode = podcast.episodes.build(episode_params)

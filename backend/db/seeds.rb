@@ -5,4 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-podcasts = Podcast.create([{title: 'WTF With Marc Maron', website: 'wtfpod.com'}])
+podcasts = Podcast.create([{title: 'WTF With Marc Maron', website: 'wtfpod.com', user_id: 1}])
+user = User.create(email: "testuser@gmail.com", password: "testuser!")

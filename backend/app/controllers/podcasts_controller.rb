@@ -1,5 +1,7 @@
 class PodcastsController < ApplicationController
     before_action :set_podcast, only: [:show, :update, :destroy]
+    # before_action :unauthorized_check, only: [:update, :destroy]
+    before_action :authenticate_user!, only: [:create]
     
     def index 
         podcasts = Podcast.all.with_attached_image
@@ -7,7 +9,7 @@ class PodcastsController < ApplicationController
     end 
 
     def create
-        podcast = Podcast.new(podcast_params)
+        podcast = current_user.podcasts.new(podcast_params)
         if podcast.save
             render json: podcast
         else
@@ -40,10 +42,17 @@ class PodcastsController < ApplicationController
     private
 
     def set_podcast
-        @podcast = Podcast.find(params[:id])
+        @podcast = Podcast.find_by(id: params[:id])
     end 
 
     def podcast_params
         params.permit(:title, :image, :website)
     end 
+
+    # def unauthorized_check
+    #     if !@podcast || @podcast.user != current_user
+    #       render json: "You are not authorized to visit this page", status: :unprocessable_entity
+    #     end
+    # end
+    
 end

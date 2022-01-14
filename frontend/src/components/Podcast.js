@@ -1,10 +1,11 @@
 import EpisodesContainer from '../containers/EpisodesContainer'
 import { Link } from 'react-router-dom'
 import image from './noimage.jpeg'
+import { useSelector } from 'react-redux'
 
-const Podcast = ({id, title, image_format, website, history, episodes}) => {
+const Podcast = ({id, title, image_format, website, user_id, history, episodes}) => {
+    const user = useSelector(state => state.authorization.currentUser)
 
-    // debugger 
     return (
         <div>
             <div key={id}>
@@ -12,11 +13,10 @@ const Podcast = ({id, title, image_format, website, history, episodes}) => {
                     <Link to={`/podcasts/${id}`}><img id={`podcast-${id}`} src={image_format ? image_format.url : image} width={300} height={300} alt={"podcast"} /></Link>
                     <p>{website}</p>
             </div>
-            <div>
-            {(!!history && history.location.pathname === `/podcasts/${id}`) ? <EpisodesContainer podcast={{id, title, image_format, website, episodes}} /> : null} 
-            </div>
+            {(!!history && history.location.pathname === `/podcasts/${id}`) ? <EpisodesContainer podcast={{id, title, image_format, website, user_id, episodes}}  currentUser={user} /> : null} 
         </div>
     )
 };
+
 
 export default Podcast;

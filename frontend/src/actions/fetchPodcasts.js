@@ -6,10 +6,13 @@ export function fetchPodcasts() {
         fetch('http://localhost:3000/podcasts')
             .then((resp) => resp.json())
             .then((podcasts) =>
-                dispatch({
+            {
+            console.log(podcasts)
+              return  dispatch({
                     type: 'FETCH_PODCASTS',
                     payload: podcasts,
                 })
+            }
             );
     };
 }
