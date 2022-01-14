@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addPodcast } from '../actions/index'
-import { Button } from '@material-ui/core'
+import { Button, Box } from '@material-ui/core'
 
 class PodcastInput extends React.Component {
     state = {
@@ -35,6 +35,7 @@ class PodcastInput extends React.Component {
                     minHeight="100vh"
                     textAlign="center">
                 <form onSubmit={this.handleSubmit}>
+                <h1>Enter New Podcast</h1>    
                 <fieldset>
                     <label>Title:</label>
                     <input type='text' placeholder='Title' value={this.state.title} name='title' onChange={this.handleChange}/><br /><br />

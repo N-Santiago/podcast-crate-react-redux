@@ -11,7 +11,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { connect } from 'react-redux';
 import { fetchPodcasts } from './actions/fetchPodcasts';
-import { wrappedComponents } from './components/Index';
+import { wrappedComponents } from './components/index';
 
 class App extends React.Component {
   
