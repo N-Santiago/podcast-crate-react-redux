@@ -5,8 +5,6 @@ import Episodes from '../components/Episodes'
 class EpisodesContainer extends React.Component {
     
     render() { 
-        console.log(this.props.currentUser)
-        // debugger 
         return (
             <div>
                 {(parseInt(this.props.podcast.user_id) === parseInt(this.props.currentUser?.data?.id)) ? < EpisodeInput podcast={this.props.podcast} /> : null}
