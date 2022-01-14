@@ -1,6 +1,6 @@
 import Login from './Login'
 import * as React from 'react';
-import {Box, Button, Link} from '@material-ui/core/';
+import {Box, Button} from '@material-ui/core/';
 
 const Home = (props) => {
   return (
