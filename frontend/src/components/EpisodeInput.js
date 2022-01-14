@@ -31,9 +31,9 @@ class EpisodeInput extends React.Component {
                 <div>
                     <Button color="inherit" component={Link} href={`/podcasts/${this.props.podcast.id}/edit`}><h2>Edit Podcast</h2></Button>
                 </div>
-                <Box display="flex" justifyContent="center">
+                <Box sx={{ p: 2, border: '1px solid grey' }}>
                 <form onSubmit={this.handleSubmit}>
-                <h2>Enter an Episode</h2>
+                <h3>Enter an Episode</h3>
                 <fieldset>
                     <label>Episode Name:</label>
                     <input type='text' placeholder='Name' value={this.state.name} name='name' onChange={this.handleChange} /><br /><br />

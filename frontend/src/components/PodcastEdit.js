@@ -28,14 +28,9 @@ class PodcastEdit extends React.Component {
     render() {
         return (
             <div>
-                <Box
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                    minHeight="100vh"
-                    textAlign="center">
+                <Box sx={{ p: 2, border: '1px solid grey' }}>
                 <form onSubmit={this.handleSubmit}>
-                    <h1>Edit Podcast</h1>
+                    <h3>Edit Podcast</h3>
                     <fieldset>
                         <label>Title:</label>
                         <input type='text' placeholder='Title' value={this.state.title} name='title' onChange={this.handleChange}/><br /><br />
