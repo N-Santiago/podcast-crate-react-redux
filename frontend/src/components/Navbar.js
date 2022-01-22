@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles, AppBar, Toolbar, Typography, Button, Link, MenuItem, Menu } from '@material-ui/core/';
 import { useSelector } from 'react-redux'
+// import '../index.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   customColor: {
-    backgroundColor: "gray"
+    backgroundColor: "#cc0000"
   },
 }));
 
@@ -42,7 +43,7 @@ export default function NavBar() {
       >
         <Toolbar>
           <Typography variant="h6" className={classes.title} >
-            <strong>Podcast Crate</strong>
+            <strong class="brand">Podcast Crate</strong>
           </Typography>
           <div className={classes.buttons}>
             <Button color="inherit" href={"/about"}><strong>About</strong></Button>
