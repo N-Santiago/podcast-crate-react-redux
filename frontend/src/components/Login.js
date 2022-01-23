@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { loginUser } from "../actions/index";
 import Button from "@material-ui/core/Button";
-import { Box } from "@material-ui/core";
+import { Box, TextField, Grid } from "@material-ui/core";
 
 class Login extends React.Component {
   state = {
@@ -26,38 +26,44 @@ class Login extends React.Component {
       .catch(() => this.setState({ error: true }));   
   };
   
-
   render() {
     return (
-      <Box sx={{ p: 2, border: '1px solid grey' }}>
+      <Box sx={{ 
+          p: 2, 
+          border: '1px solid grey',
+          borderRadius: 5,
+          backgroundColor: '#f2f2f2'
+          }}>
         <form onSubmit={this.handleSubmit} >
-          <h3>Log In</h3>
-          <p>{this.state.error && "Invalid email or password"}</p>
-          <fieldset>
-            <label htmlFor='email'>
-              Email:
-            </label>
-            <input
-              type='text'
-              name='email'
-              id='email'
-              onChange={this.handleChange}
-              value={this.state.email}
-            />
-          </fieldset>
-          <fieldset>
-            <label htmlFor='password'>
-              Password:
-            </label>
-            <input
-              type='password'
-              name='password'
-              id='password'
-              onChange={this.handleChange}
-              value={this.state.password}
-            />
-          </fieldset><br/>
-          <Button variant="contained" size="small" color="inherit" type='submit'>Log In</Button>
+          <Grid container alignItems="center" justifyContent="center" direction="column">
+            <Grid item>
+              <h3>Log In</h3>
+              <p>{this.state.error && "Invalid email or password"}</p>
+            </Grid>  
+            <Grid item>
+              <TextField
+                type='text'
+                label='Email'
+                name='email'
+                id='email'
+                onChange={this.handleChange}
+                value={this.state.email}
+              /><br/>
+            </Grid><br/> 
+            <Grid item>
+              <TextField
+                label='Password'
+                type='password'
+                name='password'
+                id='password'
+                onChange={this.handleChange}
+                value={this.state.password}
+              /><br/>
+            </Grid><br/>
+            <Grid item>
+              <Button variant="contained" size="small" color="inherit" type='submit'>Log In</Button>
+            </Grid>
+          </Grid>  
         </form>
       </Box>
     );

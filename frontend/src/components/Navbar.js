@@ -43,7 +43,7 @@ export default function NavBar() {
       >
         <Toolbar>
           <Typography variant="h6" className={classes.title} >
-            <strong class="brand">Podcast Crate</strong>
+            <strong className="brand">Podcast Crate</strong>
           </Typography>
           <div className={classes.buttons}>
             <Button color="inherit" href={"/about"}><strong>About</strong></Button>
