@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { signupUser } from "../actions/auth";
-import { Button } from "@material-ui/core";
-import { Box } from "@material-ui/core";
+import { Button, Box, TextField, Grid } from "@material-ui/core";
 
 class Signup extends React.Component {
   state = {
@@ -28,35 +27,42 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <Box sx={{ p: 2, border: '1px solid grey' }}>
+      <Box sx={{ 
+        p: 2, 
+        border: '1px solid grey',
+        borderRadius: 5,
+        backgroundColor: '#f2f2f2'
+        }}>
         <form onSubmit={this.handleSubmit}>
-          <h1>Sign Up</h1>
-          <p>{this.state.errors.status.message}</p>
-          <fieldset>
-            <label htmlFor='email'>
-              Email:
-            </label>
-            <input
+        <Grid container alignItems="center" justifyContent="center" direction="column">
+          <Grid item>
+            <h3>Sign Up</h3>
+            <p>{this.state.errors.status.message}</p>
+          </Grid>  
+          <Grid item>
+            <TextField
               type='text'
+              label='Email'
               name='email'
               id='email'
               onChange={this.handleChange}
               value={this.state.email}
             />
-          </fieldset>
-          <fieldset>
-            <label htmlFor='password'>
-              Password:
-            </label>
-            <input
+            </Grid><br/>
+          <Grid item>
+            <TextField
               type='password'
+              label='Password'
               name='password'
               id='password'
               onChange={this.handleChange}
               value={this.state.password}
             />
-          </fieldset><br/>
-          <Button variant="contained" size="small" color="inherit" type='submit'>Sign Up</Button>
+            </Grid><br/>
+          <Grid item>
+            <Button variant="contained" size="small" color="inherit" type='submit'>Sign Up</Button>
+          </Grid>
+          </Grid>
         </form>
       </Box>
     );
