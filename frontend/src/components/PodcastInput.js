@@ -29,13 +29,8 @@ class PodcastInput extends React.Component {
     render() {
         return (
             <div>
-                <Box sx={{ 
-                    p: 2, 
-                    border: '1px solid grey',
-                    borderRadius: 5,
-                    backgroundColor: '#f2f2f2'
-                }}>
-                <form onSubmit={this.handleSubmit} >
+                <Box sx={{ p: 2, border: '1px solid grey' }}>
+                <form onSubmit={this.handleSubmit}>
                 <h3>Enter New Podcast</h3>    
                 <fieldset>
                     <label>Title:</label>

@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { signupUser } from "../actions/auth";
-import { Button, TextField, Grid, Box } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 
 class Signup extends React.Component {
   state = {
@@ -27,42 +28,35 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <Box sx={{ 
-        p: 2, 
-        border: '1px solid grey',
-        borderRadius: 5,
-        backgroundColor: '#f2f2f2'
-        }}>
+      <Box sx={{ p: 2, border: '1px solid grey' }}>
         <form onSubmit={this.handleSubmit}>
-        <Grid container alignItems="center" justifyContent="center" direction="column">
-          <Grid item>
-            <h1>Sign Up</h1>
-            <p>{this.state.errors.status.message}</p>
-          </Grid>  
-          <Grid item>
-            <TextField
+          <h1>Sign Up</h1>
+          <p>{this.state.errors.status.message}</p>
+          <fieldset>
+            <label htmlFor='email'>
+              Email:
+            </label>
+            <input
               type='text'
-              label='Email'
               name='email'
               id='email'
               onChange={this.handleChange}
               value={this.state.email}
             />
-          </Grid><br/>
-          <Grid item>
-            <TextField
+          </fieldset>
+          <fieldset>
+            <label htmlFor='password'>
+              Password:
+            </label>
+            <input
               type='password'
-              label='Password'
               name='password'
               id='password'
               onChange={this.handleChange}
               value={this.state.password}
             />
-          </Grid><br/>
-          <Grid item>
-            <Button variant="contained" size="small" color="inherit" type='submit'>Sign Up</Button>
-          </Grid>
-          </Grid>
+          </fieldset><br/>
+          <Button variant="contained" size="small" color="inherit" type='submit'>Sign Up</Button>
         </form>
       </Box>
     );

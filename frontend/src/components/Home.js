@@ -1,17 +1,15 @@
 import Login from './Login'
 import * as React from 'react';
 import {Box, Button} from '@material-ui/core/';
-import image from './mic.jpg'
 
 const Home = (props) => {
   return (
     <div>
       <Box sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        width: 800,
-        height: 300,
-        justifyContent: 'space-between'  
+        width: 600,
+        height: 150,
+        backgroundColor: 'lightgrey',
+        borderRadius: 16
       }}>
         <article>
           <h1>Welcome to our Podcast App</h1> 
@@ -19,9 +17,9 @@ const Home = (props) => {
         </article>
         <img src={image} width={300} height={300} />
       </Box><br/>
-      < Login history={props.history} /><br/>
+      < Login history={props.history} />
       <Button href="/signup" color="inherit">New User? Please Signup</Button>
-    </div>     
+    </div>
   );
 };
 
