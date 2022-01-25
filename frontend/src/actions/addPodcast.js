@@ -2,24 +2,24 @@ import { getToken } from "./auth.js"
 
 export const addPodcast = (podcast, history) => {
     return (dispatch) => {
-        fetch('http://localhost:3000/podcasts', {
-            method: 'POST',
-            headers: { Authorization: getToken(), 
-            },
-            body: podcast
+      fetch('http://localhost:3000/podcasts', {
+          method: 'POST',
+          headers: { Authorization: getToken(), 
+          },
+          body: podcast
+      })
+      .then((res) => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error(res.statusText);
+          }
         })
-        .then((res) => {
-            if (res.ok) {
-              return res.json();
-            } else {
-              throw new Error(res.statusText);
-            }
-          })
-          .then((data) => {
-            dispatch({ type: "CREATE_PODCAST", payload: data });
-            history.push("/podcasts");
-          })
-          .catch((err) => dispatch({ type: "ERROR", payload: "" }));
-      };
+        .then((data) => {
+          dispatch({ type: "CREATE_PODCAST", payload: data });
+          history.push("/podcasts");
+        })
+        .catch((err) => dispatch({ type: "ERROR", payload: "" }));
+    };
 };
     

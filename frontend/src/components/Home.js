@@ -13,10 +13,10 @@ const Home = (props) => {
         height: 300,
         justifyContent: 'space-between'  
       }}>
-        <p>
+        <article>
           <h1>Welcome to our Podcast App</h1> 
           <h2>Feel free to share your favorites or have fun listening to the ones available.</h2>
-        </p>
+        </article>
         <img src={image} width={300} height={300} />
       </Box><br/>
       < Login history={props.history} /><br/>

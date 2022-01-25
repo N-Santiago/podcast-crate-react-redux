@@ -9,9 +9,9 @@ class PodcastsController < ApplicationController
     end 
 
     def create
-        podcast = current_user.podcasts.new(podcast_params)
-        if podcast.save
-            render json: podcast
+        @podcast = current_user.podcasts.new(podcast_params)
+        if @podcast.save
+            render json: @podcast
         else
             render json: {
                 error: "Cannot create podcast",
@@ -46,7 +46,7 @@ class PodcastsController < ApplicationController
     end 
 
     def podcast_params
-        params.permit(:title, :image, :website)
+        params.permit(:title, :image, :website, :user_id)
     end 
 
     # def unauthorized_check

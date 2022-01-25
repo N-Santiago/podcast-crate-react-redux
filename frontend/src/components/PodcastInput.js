@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addPodcast } from '../actions/index'
-import { Button, Box, Grid, TextField } from '@material-ui/core'
+import { Button, Box } from '@material-ui/core'
 
 class PodcastInput extends React.Component {
     state = {
@@ -17,6 +17,7 @@ class PodcastInput extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target) 
+        console.log('formData', formData)
         this.props.addPodcast(formData, this.props.history);
         this.setState({
             title: '',

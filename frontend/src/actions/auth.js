@@ -6,12 +6,7 @@ const setToken = (token) => {
 };
   
 export const getToken = () => {
-    const now = new Date(Date.now()).getTime();
-    const timeAllowed = 1000 * 60 * 30;
-    const timeSinceLastLogin = now - localStorage.getItem("lastLoginTime");
-    if (timeSinceLastLogin < timeAllowed) {
-        return localStorage.getItem("token");
-    }
+  return localStorage.getItem("token");
 };
 
 const deleteToken = () => {
@@ -103,7 +98,6 @@ export const checkAuth = () => {
       return fetch("http://localhost:3000/current_user", {
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/json",
           Authorization: getToken()
         }
       }).then((res) => {
