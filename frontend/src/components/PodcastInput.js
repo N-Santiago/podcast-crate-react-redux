@@ -17,7 +17,6 @@ class PodcastInput extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target) 
-        console.log('formData', formData)
         this.props.addPodcast(formData, this.props.history);
         this.setState({
             title: '',
@@ -31,7 +30,8 @@ class PodcastInput extends React.Component {
             <div>
                 <Box sx={{ p: 2, border: '1px solid grey' }}>
                 <form onSubmit={this.handleSubmit}>
-                <h3>Enter New Podcast</h3>    
+                <h3>Enter New Podcast</h3> 
+                {/* <p>{this.state.error && "Cannot Create Podcast"}</p>    */}
                 <fieldset>
                     <label>Title:</label>
                     <input type='text' placeholder='Title' value={this.state.title} name='title' onChange={this.handleChange}/><br /><br />

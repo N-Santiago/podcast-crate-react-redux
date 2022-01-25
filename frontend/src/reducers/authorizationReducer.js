@@ -5,7 +5,7 @@ const initialState = {
     loggedIn: false,
     currentUser: {}
   };
-  
+
   export default function authorization(state = initialState, action) {
     switch (action.type) {
       case AUTHENTICATED:
@@ -23,4 +23,4 @@ const initialState = {
       default:
         return state;
     }
-  }
+  } 

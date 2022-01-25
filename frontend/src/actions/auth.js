@@ -4,9 +4,14 @@ const setToken = (token) => {
     localStorage.setItem("token", token);
     localStorage.setItem("lastLoginTime", new Date(Date.now()).getTime());
 };
-  
+
 export const getToken = () => {
-  return localStorage.getItem("token");
+    const now = new Date(Date.now()).getTime();
+    const timeAllowed = 1000 * 60 * 30;
+    const timeSinceLastLogin = now - localStorage.getItem("lastLoginTime");
+    if (timeSinceLastLogin < timeAllowed) {
+        return localStorage.getItem("token");
+    }
 };
 
 const deleteToken = () => {
@@ -58,7 +63,7 @@ export const loginUser = (credentials, history) => {
             .then((userJson) =>
               dispatch({ type: AUTHENTICATED, payload: userJson }),
             );
- 
+
         } else {
           return res.json().then((errors) => {
             dispatch({ type: NOT_AUTHENTICATED });
@@ -68,7 +73,7 @@ export const loginUser = (credentials, history) => {
       });
    };
 };
-  
+
 export const logoutUser = () => {
     return (dispatch) => {
         return fetch("http://localhost:3000/logout", {
@@ -98,6 +103,7 @@ export const checkAuth = () => {
       return fetch("http://localhost:3000/current_user", {
         headers: {
           Accept: "application/json",
+          "Content-Type": "application/json",
           Authorization: getToken()
         }
       }).then((res) => {

@@ -17,7 +17,7 @@ const Home = (props) => {
           <h1>Welcome to our Podcast App</h1>
           <h2>Feel free to share your favorites or have fun listening to the ones available.</h2>
         </article>
-        <img src={image} width={300} height={300} />
+        <img src={image} width={300} height={300} alt={'Hold The Mic and Do Your Own Podcast'} />
       </Box><br/>
       < Login history={props.history} />
       <Button href="/signup" color="inherit">New User? Please Signup</Button>
