@@ -57,7 +57,7 @@ class App extends React.Component {
             }} 
             />
             
-            <Route component={Error}/>
+            <Route render={(routerProps) => <wrappedComponents.AuthenticatedError {...routerProps}/>}/>
         </Switch>
         </Box>
         <Toolbar />

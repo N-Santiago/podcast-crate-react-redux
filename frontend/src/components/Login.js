@@ -43,7 +43,7 @@ class Login extends React.Component {
             </Grid>  
             <Grid item>
               <TextField
-                type='text'
+                type='email'
                 label='Email'
                 name='email'
                 id='email'
