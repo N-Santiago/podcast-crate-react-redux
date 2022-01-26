@@ -1,4 +1,5 @@
 import Podcast from './Podcast'
+import { Grid } from '@material-ui/core'
 
 const Podcasts = (props) => {
     
@@ -8,8 +9,13 @@ const Podcasts = (props) => {
         })
     } 
     return (
-        <div>
-            {podcasts()}
+        <div className='podcast'>
+          <Grid container spacing={3} 
+          columns={{ xs: 4, sm: 8, md: 12 }}
+          alignContent='center'
+          >
+                {podcasts()}
+          </Grid>
         </div>
     );
 }

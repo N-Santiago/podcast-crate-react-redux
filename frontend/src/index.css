@@ -21,6 +21,14 @@ code {
   font-family: "KgBlessYourHeart";
 }
 
+.podcast {
+  margin: 0;
+  position: absolute;
+  top: 80%;
+  left: 55%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
 
 
 
