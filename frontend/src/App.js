@@ -28,7 +28,7 @@ class App extends React.Component {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          minHeight="100vh"
+          // minHeight="100vh"
           textAlign="center">
         <Switch>
             <Route exact path='/' component={Home}/>
@@ -55,8 +55,7 @@ class App extends React.Component {
                   < Error />
                 )   
             }} 
-            />
-            
+            /> 
             <Route render={(routerProps) => <wrappedComponents.AuthenticatedError {...routerProps}/>}/>
         </Switch>
         </Box>

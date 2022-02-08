@@ -65,6 +65,7 @@ class Signup extends React.Component {
           </Grid>
         </form>
       </Box>
+
     );
   }
 }

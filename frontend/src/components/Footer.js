@@ -19,6 +19,7 @@ function Copyright() {
         width: '100%',
         position: 'fixed',
         bottom: 0,
+        marginTop: 10,
     },
   }));
 

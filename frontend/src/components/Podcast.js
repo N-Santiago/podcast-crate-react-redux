@@ -2,12 +2,19 @@ import EpisodesContainer from '../containers/EpisodesContainer'
 import { Link } from 'react-router-dom'
 import image from './noimage.jpeg'
 import { useSelector } from 'react-redux'
+import {Box} from '@material-ui/core/';
 
 const Podcast = ({id, title, image_format, website, user_id, history, episodes}) => {
     const user = useSelector(state => state.authorization.currentUser)
 
     return (
         <div>
+            <Box sx={{
+                width: 365,
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between' 
+            }}></Box>
             <div key={id}>
                     <h2>{title}</h2>
                     <Link to={`/podcasts/${id}`}><img id={`podcast-${id}`} src={image_format ? image_format.url : image} width={300} height={300} alt={"podcast"} /></Link>

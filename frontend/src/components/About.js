@@ -1,5 +1,6 @@
 import List from '@material-ui/core/List';
-import { ListItem, Link, ListItemText } from '@material-ui/core/';
+import { ListItem, Link, ListItemText, Toolbar } from '@material-ui/core/';
+import Footer from './Footer';
 
 const About = () => {
   return (
@@ -40,7 +41,9 @@ const About = () => {
           <ListItem button color="inherit" component={Link} href='https://www.instagram.com/lechecocoproductions' target="_blank" rel="noopener noreferrer">
             <ListItemText primary="Lechecoco Productions: We talk about beers, movies and other topics (in Spanish)." />
           </ListItem>
-        </List>}    
+        </List>}  
+        <Toolbar />
+        <Footer />  
     </div>
   );
 };
