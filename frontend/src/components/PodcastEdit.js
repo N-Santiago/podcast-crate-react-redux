@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { editPodcast } from '../actions/index'
 import { Button, Box, Grid, TextField } from '@material-ui/core'
+import image from './mic3.jpg'
 
 class PodcastEdit extends React.Component {
     state = {
@@ -29,10 +30,14 @@ class PodcastEdit extends React.Component {
         return (
             <div>
                 <Box sx={{ 
-                    p: 2, 
-                    border: '1px solid grey',
-                    borderRadius: 5,
-                    backgroundColor: '#f2f2f2'
+                     p: 2, 
+                     border: '1px solid grey',
+                     borderRadius: 5,
+                     backgroundColor: '#f2f2f2',
+                     display: 'flex',
+                     flexDirection: 'row',
+                     justifyContent: 'space-between', 
+                     width: 500
                 }}>
                 <form onSubmit={this.handleSubmit} >
                     <Grid container alignItems="center" justifyContent="center" direction="column">
@@ -79,6 +84,7 @@ class PodcastEdit extends React.Component {
                         </Grid>
                     </Grid>
                 </form>
+                <img src={image} width={300} height={300} alt={'No podcast is perfect, keep recording and improving.'} />
                 </Box>
             </div>
         )

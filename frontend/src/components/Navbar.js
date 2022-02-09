@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles, AppBar, Toolbar, Typography, Button, Link, MenuItem, Menu } from '@material-ui/core/';
 import { useSelector } from 'react-redux'
-// import '../index.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,7 +79,7 @@ export default function NavBar() {
             </Menu>
             </div>
         </Toolbar>
-      </AppBar>
+      </AppBar><br/>
     </div>
   );
 }

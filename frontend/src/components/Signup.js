@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { signupUser } from "../actions/auth";
 import { Button, Box, TextField, Grid } from "@material-ui/core";
+import image from './mic1.jpg'
 
 class Signup extends React.Component {
   state = {
@@ -31,41 +32,46 @@ class Signup extends React.Component {
         p: 2, 
         border: '1px solid grey',
         borderRadius: 5,
-        backgroundColor: '#f2f2f2'
-        }}>
-        <form onSubmit={this.handleSubmit}>
-        <Grid container alignItems="center" justifyContent="center" direction="column">
-          <Grid item>
-            <h3>Sign Up</h3>
-            <p>{this.state.errors.status.message}</p>
-          </Grid>  
-          <Grid item>
-            <TextField
-              type='email'
-              label='Email'
-              name='email'
-              id='email'
-              onChange={this.handleChange}
-              value={this.state.email}
-            />
-            </Grid><br/>
-          <Grid item>
-            <TextField
-              type='password'
-              label='Password'
-              name='password'
-              id='password'
-              onChange={this.handleChange}
-              value={this.state.password}
-            />
-            </Grid><br/>
-          <Grid item>
-            <Button variant="contained" size="small" color="inherit" type='submit'>Sign Up</Button>
+        backgroundColor: '#f2f2f2',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between', 
+        width: 500
+        }}>  
+          <form onSubmit={this.handleSubmit}>
+          <Grid container alignItems="center" justifyContent="center" direction="column">
+            <Grid item>
+              <h3>Sign Up</h3>
+              <p>{this.state.errors.status.message}</p>
+            </Grid>  
+            <Grid item>
+              <TextField
+                type='email'
+                label='Email'
+                name='email'
+                id='email'
+                onChange={this.handleChange}
+                value={this.state.email}
+              />
+              </Grid><br/>
+            <Grid item>
+              <TextField
+                type='password'
+                label='Password'
+                name='password'
+                id='password'
+                onChange={this.handleChange}
+                value={this.state.password}
+              />
+              </Grid><br/>
+            <Grid item>
+              <Button variant="contained" size="small" color="inherit" type='submit'>Sign Up</Button>
+            </Grid>
           </Grid>
-          </Grid>
-        </form>
+          </form>
+          <img src={image} width={300} height={300} alt={'There is a lot to say, welcome to podcasting.'} />
       </Box>
-
+      
     );
   }
 }

@@ -1,10 +1,12 @@
 import List from '@material-ui/core/List';
 import { ListItem, Link, ListItemText, Toolbar } from '@material-ui/core/';
 import Footer from './Footer';
+import image from './myself.jpg'
 
 const About = () => {
   return (
     <div>
+      <aside><img src={image} width={300} height={400} alt={'This is me.'} /></aside>
       {<h1>About The Project:</h1>}
       {<p>Podcast Crate is my React/Redux and final Flatiron project.
           Like the previous projects, I wanted it to be about something 
@@ -41,7 +43,7 @@ const About = () => {
           <ListItem button color="inherit" component={Link} href='https://www.instagram.com/lechecocoproductions' target="_blank" rel="noopener noreferrer">
             <ListItemText primary="Lechecoco Productions: We talk about beers, movies and other topics (in Spanish)." />
           </ListItem>
-        </List>}  
+        </List>} 
         <Toolbar />
         <Footer />  
     </div>
