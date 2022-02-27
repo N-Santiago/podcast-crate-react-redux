@@ -5,7 +5,7 @@ class Podcast < ApplicationRecord
     has_one_attached :image
     validates :title, :website, presence: true, uniqueness: true 
     validates :title, length: { in: 3..35, too_long: "%{count} characters is the minimum and maximum allowed" }
-    validates :website, length: { maximum: 35, too_long: "%{count} characters is the minimum and maximum allowed" }, format: /https?:\/\/.+/i
+    validates :website, length: { maximum: 65, too_long: "%{count} characters is the minimum and maximum allowed" }, format: /https?:\/\/.+/i
     def image_url
         url_for(self.image)
     end

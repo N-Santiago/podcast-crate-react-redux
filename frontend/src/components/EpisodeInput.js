@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addEpisode } from '../actions/addEpisode';
-import { Box, Button, Link, TextField, Grid } from '@material-ui/core/';
+import { Box, Button, TextField, Grid } from '@material-ui/core/';
 
 class EpisodeInput extends React.Component {
 
@@ -29,7 +29,7 @@ class EpisodeInput extends React.Component {
         return (
             <div>
                 <div>
-                    <Button color="inherit" component={Link} href={`/podcasts/${this.props.podcast.id}/edit`}><h2>Edit Podcast</h2></Button>
+                    <Button color="inherit" href={`/podcasts/${this.props.podcast.id}/edit`}><h2>Edit Podcast</h2></Button>
                 </div><br/>
                 <Box sx={{ 
                     p: 2, 
@@ -67,13 +67,10 @@ class EpisodeInput extends React.Component {
                         <Grid item>   
                             <TextField
                                 label='Spotify URL'
-                                type='url' 
                                 name='spotify_link'
                                 id='spotify_link' 
                                 value={this.state.spotify_link}  
                                 onChange={this.handleChange} 
-                                pattern="https?:\/\/.+" 
-                                title="Include http://" 
                                 required 
                             />
                             <p><i><small>Spotify's iframe code is hardcoded. Go to copy embedded link on the Spotify's podcast and only copy the url on that code.</small></i></p> 
