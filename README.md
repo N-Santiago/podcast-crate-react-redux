@@ -4,13 +4,13 @@ Final Flatiron Project developed on React <img src="https://img.icons8.com/offic
 
 These are the steps to get the app up and running:
 
-Step 1. Clone this repository Make a local copy of this project and move into the directory. This project requires Ruby and RubyGems.
+Step 1. Clone this repository Make a local copy of this project and move into the directory. 
 
-$ git clone git@github.com:https://github.com/N-Santiago/podcast-crate-react-redux.git Share podcasts using Spotify embedded links. 
+```$ git clone git@github.com:https://github.com/N-Santiago/podcast-crate-react-redux.git``` 
 
 ## Usage 
 
-Enjoy the ones available, share your favorite podcasts and episodes by finding the url of the embedded link and entering it in the new podcast form. 
+Enjoy the ones available, share your favorite podcasts and episodes by finding the spotify url of the embedded link and entering it in the new podcast form. 
 
 ## Video Demo
 
