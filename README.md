@@ -11,7 +11,11 @@ $ git clone git@github.com:https://github.com/N-Santiago/podcast-crate-react-red
 
 ## Usage 
 
-Enjoy the ones available, share your favorite podcasts and episodes by finding the url of the embedded link and entering it in the new podcast form.   
+Enjoy the ones available, share your favorite podcasts and episodes by finding the url of the embedded link and entering it in the new podcast form. 
+
+## Video Demo
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/NlvK35kcFVM/0.jpg)](https://www.youtube.com/watch?v=NlvK35kcFVM)
 
 ## Contributing 
 
