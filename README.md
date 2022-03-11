@@ -1,5 +1,5 @@
 # Podcast Crate :studio_microphone:
-Final Flatiron Project developed on React with Redux :rocket: :rocket:
+Final Flatiron Project developed on React <img src="https://img.icons8.com/office/16/000000/react.png"/> with Redux :rocket: :rocket:
 ## Setup 
 
 These are the steps to get the app up and running:
