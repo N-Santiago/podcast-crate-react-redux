@@ -1,4 +1,4 @@
-# Podcast Crate :studio_microphone:;
+# Podcast Crate :studio_microphone:
 Final Flatiron Project developed on React with Redux :rocket: :rocket:
 ## Setup 
 
