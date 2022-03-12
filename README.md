@@ -29,3 +29,5 @@ Available as open source under the terms of the MIT License.
 Everyone interacting in the album geeks project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
 
 © 2021 Norberto Santiago
+
+<a href="https://icons8.com/icon/GObamiv1ZJcC/album">React and Redux icons by Icons8</a>
