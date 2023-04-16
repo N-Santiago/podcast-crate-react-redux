@@ -2140,9 +2140,6 @@ acorn-walk@^7.0.0, acorn-walk@^7.1.1:
   version "7.2.0"
   resolved "https://registry.npmjs.org/acorn-walk/-/acorn-walk-7.2.0.tgz"
 
-acorn@^7.0.0, acorn@^7.1.1:
-  version "7.4.1"
-  resolved "https://registry.npmjs.org/acorn/-/acorn-7.4.1.tgz"
 
 acorn@^8.2.4, acorn@^8.5.0, acorn@^8.7.1:
   version "8.8.2"
@@ -3238,8 +3235,8 @@ dns-equal@^1.0.0:
   resolved "https://registry.npmjs.org/dns-equal/-/dns-equal-1.0.0.tgz"
 
 dns-packet@^5.2.2:
-  version "5.3.1"
-  resolved "https://registry.npmjs.org/dns-packet/-/dns-packet-5.3.1.tgz"
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/dns-packet/-/dns-packet-5.4.0.tgz#1f88477cf9f27e78a213fb6d118ae38e759a879b"
   dependencies:
     "@leichtgewicht/ip-codec" "^2.0.1"
 
@@ -7793,8 +7790,8 @@ webpack-sources@^3.2.3:
   resolved "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.3.tgz"
 
 webpack@^5.64.4:
-  version "5.76.2"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.76.2.tgz#6f80d1c1d1e3bf704db571b2504a0461fac80230"
+  version "5.72.1"
+  resolved "https://registry.npmjs.org/webpack/-/webpack-5.72.1.tgz"
   dependencies:
     "@types/eslint-scope" "^3.7.3"
     "@types/estree" "^0.0.51"
